@@ -2,6 +2,10 @@ other/
 
 */*.pem
 
+*/*.doc
+*/*.docx
+
+
 *.env
 *.DS_Store
 
