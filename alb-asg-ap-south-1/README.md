@@ -14,6 +14,6 @@ no. of instances.
 
 ---
 ## Screenshots
-- check out pdf or [ss/]()
+- check out [project pdf](./ALB-ASG-Project.pdf) or [ss/](./ss) folder
 
 <img width="1128" alt="output" src="https://github.com/user-attachments/assets/a0e9d690-c871-4cde-93f2-c9af1c86beb5">
