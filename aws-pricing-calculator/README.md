@@ -1,7 +1,7 @@
 # AWS Pricing Calculator
 
 ## Description
-We will be exploring AWS pricing calculator to calculate cost of EC2 instances using savings plan for 3 years
+We will be exploring AWS pricing calculator to calculate cost of 10 EC2 instances using savings plan for 3 years
 
 - It allows us to Estimate the cost for our architecture solution.
 - We can configure a cost estimate that fits our unique business or personal needs with AWS products and services.
