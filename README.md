@@ -2,6 +2,10 @@
 
 ## This is repo containing cloud projects for upskilling and sharing my work.
 
+## **Author**
+- SAHAL PATHAN | [Linkedin](linkedin.com/in/sahalpathan/)
+
+
 ---
 ### List of Projects
 
