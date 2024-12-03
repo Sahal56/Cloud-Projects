@@ -1,3 +1,5 @@
+# **Amplify**
+
 <img width="614" alt="amplify-1" src="https://github.com/user-attachments/assets/34a38114-6cd6-4c97-9350-0b3f9c03017a">
 
 <img width="602" alt="amplify-2" src="https://github.com/user-attachments/assets/a9d9fe8c-fd91-4700-a78a-6f250de71de1">
