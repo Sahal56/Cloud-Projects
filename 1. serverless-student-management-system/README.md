@@ -104,6 +104,7 @@ https://github.com/user-attachments/assets/d833c678-395c-4464-b1ed-2e860a45ac49
 
  - Offical Guide: [AWS DOCS](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html)
  - Markdown Tables: [Link](https://www.tablesgenerator.com/markdown_tables)
+ - Diagram : [Draw.io](https://draw.io/)
  - YT Video for referrence: [Link](https://www.youtube.com/watch?v=7bgUF6YESxA)
 
 ---
