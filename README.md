@@ -1,4 +1,4 @@
-# Cloud-Projects
+# **Cloud-Projects**
 
 ## This is repo containing cloud projects for upskilling and sharing my work.
 
@@ -7,7 +7,7 @@
 
 
 ---
-### List of Projects
+### **List of Projects**
 
 | No. | Name |     Description   |
 |-----|------|-------------------|
@@ -23,5 +23,5 @@
 
 
 ---
-# ❤️ THANK YOU ❤️
+# ❤️ **THANK YOU** ❤️
 - Hit 🎯 star button if you liked my work
