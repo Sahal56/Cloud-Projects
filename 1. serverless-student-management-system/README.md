@@ -5,6 +5,10 @@
 
 - Technologies used : **AWS Amplify, Amazon API Gateway, AWS Lambda, Amazon DynamoDB**.
 
+## **Architecture**
+![serverless-crud](https://github.com/user-attachments/assets/fa858e41-ef5e-4bb7-b1b6-8e7655723f8b)
+
+
 # **Prerequisites**
 - This is project eligible for Free tier
 
