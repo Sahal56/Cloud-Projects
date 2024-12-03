@@ -82,19 +82,18 @@ https://github.com/user-attachments/assets/d833c678-395c-4464-b1ed-2e860a45ac49
 
 
 ## **Difficulties & Solutions**
-1. Where is ARN of 😡DyanamoDB Tables? to put in policy of of IAM ROLE 
-- GSearch: where to find arn of dynamo db table?
-ARN is easily constructed from your account and table details it's 
-arn:aws:dynamodb:{region}:{userID}:table/{tableName}
-- Sol: It is available, on pressing Additional Info just below, 
-- 😂 Impatient Me!!!
+1. Where is ARN of 😡DyanamoDB Tables? to put in policy of of IAM ROLE
+    - GSearch: where to find arn of dynamo db table?
+    - ARN is easily constructed from your account and table details it's arn:aws:dynamodb:{region}:{userID}:table/{tableName}
+    - Sol: It is available, on pressing Additional Info just below,
+    - 😂 Impatient Me!!!
 
 2. Due to wrong configuration of API Path in API Gw, I fixed it, but still the same error
-- Sol: Deploy API again in API GW. >> Forgot to redeploy 😗
+    - Sol: Deploy API again in API GW. >> Forgot to redeploy 😗
 
 3. Why i cant access my data in Web browser, index.html file, in postman it works!!
-- Sol: CORS error
-- Although, enabled CORS in API gateway, we have to return CORS header in Lambda function.
+    - Sol: CORS error
+    - Although, enabled CORS in API gateway, we have to return CORS header in Lambda function.
     - doesn't know, worked for me🙃
 
 ## **Authors**
