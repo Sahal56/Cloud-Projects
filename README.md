@@ -11,5 +11,17 @@
 
 | No. | Name |     Description   |
 |-----|------|-------------------|
-| 1   | [aws-pricing-calculator](https://github.com/Sahal56/Cloud-Projects/tree/main/aws-pricing-calculator)   |  To Estimate the cost of 10 EC2 instances with Savings Plan for 3 years with Partial Upfront Payment       |
+|  1  | [Serverless-Student-management-system](./1. serverless-student-management-system/)| A serverless student management system is a cloud-based application that enables the management of student data (CRUD operations) without the need to manage or provision traditional servers, leveraging services like AWS Amplify, API Gateway, Lambda, and DynamoDB. |
+| 2   | [Static Website using Iac: Terraform()   |  To Estimate the cost of 10 EC2 instances with Savings Plan for 3 years with Partial Upfront Payment       |
 
+### Other Hands on Projects
+| No. | Name |     Description   |
+|-----|------|-------------------|
+| 1   | [aws-pricing-calculator](./aws-pricing-calculator/)   |  To Estimate the cost of 10 EC2 instances with Savings Plan for 3 years with Partial Upfront Payment       |
+| 2   | [alb-asg-ap-south-1](./alb-asg-ap-south-1/)   |  Experimenting Load Balancing with Auto Scaling in Multi AZ environment       |
+| 3   | [AWS-SIMULEARN](./AWS-SIMULEARN/)   |  It is Game-based learning, fixing 👨🏻‍🔧 and configuring AWS services to complete Tasks 💯    |
+
+
+---
+# ❤️ THANK YOU ❤️
+- Hit 🎯 star button if you liked my work

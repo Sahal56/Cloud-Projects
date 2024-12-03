@@ -1,6 +1,8 @@
 other/
+*/*secrets/
 
 */*.pem
+*/*build*
 
 */*.doc
 */*.docx
