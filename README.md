@@ -12,7 +12,7 @@
 | No. | Name |     Description   |
 |-----|------|-------------------|
 |  1  | [Serverless-Student-management-system](./01-serverless-student-management-system/)| A serverless student management system is a cloud-based application that enables the management of student data (CRUD operations) without the need to manage or provision traditional servers, leveraging services like AWS Amplify, API Gateway, Lambda, and DynamoDB. |
-|  2  | [Serverless-Image-Thumbnail-Generator(./03-serverless-thumbnail-generator/)   | To generate image thumbnails, whenever any image arrives in S3 bucket. It uses S3 Event Notifications to trigger Lambda function and store thumbnail in Destination Bucket.  |
+|  2  | [Serverless-Image-Thumbnail-Generator](./03-serverless-thumbnail-generator/)   | To generate image thumbnails, whenever any image arrives in S3 bucket. It uses S3 Event Notifications to trigger Lambda function and store thumbnail in Destination Bucket.  |
 
 ### Other Hands on Projects
 | No. | Name |     Description   |
