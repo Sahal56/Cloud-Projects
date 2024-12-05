@@ -1,9 +1,12 @@
-# **Serverless Image Thumbnail Generator**
+# **Serverless Image Thumbnail 🏞️ Generator**
 
 - It generates 128 x 128 thumbnail, whenever an image is uploaded in source bucket.
 - Lambda functiion downloads image frome source bucket, process & transforms it using Python PIL package, stores/uploads output in destination bucket.
 - Terraform is used to automate infrastructure provisioning & maintenance. Thus promoting Infrastructure as Code (IaC).
 - Technologies used : **AWS S3, AWS Lambda, Terraform**
+
+## **Architecture**
+![arch-serverless-thumbnail-generator](https://github.com/user-attachments/assets/74c60f0f-6f71-4cbc-9fcd-b2182fe633ce)
 
 #### **Configuration**
 - S3 buckets :
@@ -13,17 +16,12 @@
     - Runtime : Python 3.12
     - Layers : Pillow Library, for ap-south-1 | Mumbai : `arn:aws:lambda:ap-south-1:770693421928:layer:Klayers-p312-pillow:1` | [Check this LINK](https://github.com/keithrozario/Klayers)
 
-
 **NOTE**
 1. The reason we have created two buckets, is due to use of S3 event notifications as a trigger to Lambda function. As using the same bucket, it will unnessarily call Lambda function & we have to add logic to stop if thumbnail is already created for a particular image.
 2. In future, we will implement
     1. thumnail generation for multiple/additional file formats like **PDF, Video files(mp4)**, etc..
     2.  **AWS SNS & SES** to send email/notify the owner/user about any failed operation of Lambda.
     3.  **Amazon Eventbridge** along with **SQS** as buffer and Dead Letter Queue for enhance scalability & Fault Tolerance.
-
-
-## **Architecture**
-![arch-serverless-thumbnail-generator](https://github.com/user-attachments/assets/74c60f0f-6f71-4cbc-9fcd-b2182fe633ce)
 
 ---
 ### **Screenshots**
