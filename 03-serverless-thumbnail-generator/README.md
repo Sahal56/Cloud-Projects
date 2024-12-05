@@ -2,7 +2,6 @@
 
 - It generates 128 x 128 thumbnail, whenever an image is uploaded in source bucket.
 - Lambda functiion downloads image frome source bucket, process & transforms it using Python PIL package, stores/uploads output in destination bucket.
-- 
 - Terraform is used to automate infrastructure provisioning & maintenance. Thus promoting Infrastructure as Code (IaC).
 - Technologies used : **AWS S3, AWS Lambda, Terraform**
 
@@ -17,8 +16,10 @@
 
 **NOTE**
 1. The reason we have created two buckets, is due to use of S3 event notifications as a trigger to Lambda function. As using the same bucket, it will unnessarily call Lambda function & we have to add logic to stop if thumbnail is already created for a particular image.
-2. In future, we will implement thumnail generation for multiple/additional file formats like **PDF, Video files(mp4)**, etc.. We will implement **AWS SNS & SES** to send email/notify the owner/user about any failed operation of Lambda.
-3. Additionally, we can implement **Amazon Eventbridge** along with **SQS** as buffer and Dead Letter Queue for enhance scalability & Fault Tolerance.
+2. In future, we will implement
+    1. thumnail generation for multiple/additional file formats like **PDF, Video files(mp4)**, etc..
+    2.  **AWS SNS & SES** to send email/notify the owner/user about any failed operation of Lambda.
+    3.  **Amazon Eventbridge** along with **SQS** as buffer and Dead Letter Queue for enhance scalability & Fault Tolerance.
 
 
 ## **Architecture**
@@ -35,39 +36,28 @@
 |Destination Bucket Folder| <img width="433" alt="s3-3b-destination-bucket-thumbnails" src="https://github.com/user-attachments/assets/73ecc948-6039-46a2-804e-5d2e0450f4d5"> |
 |Final Thumbnail| ![s3-5-ouput-dp](https://github.com/user-attachments/assets/f612077d-8320-42d5-a351-decdc88c7bab) |
 
-
-
-
-
-
-
-
-
-
-
-
 ---
 # Steps
 
 1. Setup AWS S3 Bucket
-Create two S3 buckets
+    - Create two S3 buckets
 
 2. Setup IAM Role for Lambda
 we have to attach policies to this role
-- AmazonS3FullAccess
-- CloudWatchLogsFullAccess
+    - AmazonS3FullAccess
+    - CloudWatchLogsFullAccess
 
 3. Create Lambda Function
-- we have to mention runtime with version
-- layer with arn
+    - we have to mention runtime with version
+    - layer with arn
 
 4. Write the Lambda Function code
-- then package into zip file
+    - then package into zip file
 
 5. Add Trigger to the Lambda Function
-- source bucket for trigger
-- event: PUT
-- prefix & suffix as options
+    - source bucket for trigger
+    - event: PUT
+    - prefix & suffix as options
 
 6. Test the Setup
 
@@ -77,9 +67,8 @@ terraform plan
 terraform apply
 ```
 
-In AWS S3 console, upload image/s in source bucket & see output in destination bucket
-
-Also, Check CloudWatch Log Groups
+7. In AWS Management console > S3, upload image/s in source bucket & see output in destination bucket
+    - Also, Check CloudWatch Log Groups
 
 Additionally, In AWS Lambda Console, we can test our Lambda
 ## Test Evenet:
