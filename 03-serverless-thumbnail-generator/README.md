@@ -8,7 +8,7 @@
 #### **Configuration**
 - S3 buckets :
     - source : Where the objects/files (images) will be uploaded
-    - destination : Where the transformed images/ thumbnail will stored (in `thumnails/` folder)
+    - destination : Where the transformed images/thumbnail will stored (in `thumnails/` folder)
 - Lamda
     - Runtime : Python 3.12
     - Layers : Pillow Library, for ap-south-1 | Mumbai : `arn:aws:lambda:ap-south-1:770693421928:layer:Klayers-p312-pillow:1` | [Check this LINK](https://github.com/keithrozario/Klayers)
@@ -37,15 +37,24 @@
 |Final Thumbnail| ![s3-5-ouput-dp](https://github.com/user-attachments/assets/f612077d-8320-42d5-a351-decdc88c7bab) |
 
 ---
-# Steps
+# Steps/Workflow
+> Impelementation is done as IaC
+
+Create file : <u> terraform.tfvars </u> for declaring variables e.g. given below
+```
+source_bucket      = "Your Source Bucket Name"
+destination_bucket = "Your Destination Bucket Name"
+```
 
 1. Setup AWS S3 Bucket
     - Create two S3 buckets
 
 2. Setup IAM Role for Lambda
-we have to attach policies to this role
-    - AmazonS3FullAccess
-    - CloudWatchLogsFullAccess
+    - we have to attach policies to this role
+        - AmazonS3FullAccess
+        - CloudWatchLogsFullAccess
+
+> In real production ready projects, we should only give the required permissions only (Least Privilege) on required resources only.
 
 3. Create Lambda Function
     - we have to mention runtime with version
@@ -61,27 +70,42 @@ we have to attach policies to this role
 
 6. Test the Setup
 
+**Terminal**
+#### Initializing, terraform will download the necessary packages, libraries for setup
 ```shell
-terraform init
-terraform plan
-terraform apply
+$ terraform init
+```
+
+#### (optional) Validate the files: to check for any syntax/configuration error in .tf files
+```shell
+$ terraform validate
+```
+
+#### Plan the Infrastructure. Optionally, we can save plan by passing -out=FILENAME i.e. -out=tfplan
+```shell
+$ terraform plan
+```
+
+#### Provision the Infrastructure. Hit **Yes** confirmation if all apears to be OK
+```shell
+$ terraform apply
 ```
 
 7. In AWS Management console > S3, upload image/s in source bucket & see output in destination bucket
     - Also, Check CloudWatch Log Groups
 
-Additionally, In AWS Lambda Console, we can test our Lambda
-## Test Evenet:
+Additionally, In AWS Lambda Console, we can test our Lambda (given that OBJECT is present in S3 Source bucket)
+#### <u> Test Event </u>
 ```json
 {
   "Records": [
     {
       "s3": {
         "bucket": {
-          "name": "thumbnail-source-bucket-sahal"
+          "name": "Your Source bucket Name"
         },
         "object": {
-          "key": "dp.jpg"
+          "key": "OBJECT"
         }
       }
     }
@@ -89,15 +113,22 @@ Additionally, In AWS Lambda Console, we can test our Lambda
 }
 ```
 
+---
+## Difficulties Faced
+1. Offcource Terraformm synatx!!!
+   - Sol: Followed Offical documentation & yes 😎 Gooogling..
 
-make file
-<u> terraform.tfvars </u>
-```
-source_bucket      = "Your Source Bucket Name"
-destination_bucket = "Your Destination Bucket Name"
-```
+2. ALthough followed as per guide, Lambda gave error, encounter the error related to arn of Pillow library (Lambda Layer)
+   - Troubleshoot in Cloudwatch, that the error was related to incorrect arn.
+   - I was using `arn` resource of us-east-1 (N. Virgina)
+   - By googling, found Klayers repo for all AWS regions & used the suitable one of ap-south-1 (Mumbai)
+   - **Learning : 👝 Same resource (OS image, container image, Layers, packages) have different `arn::` as per Regions**
+
+3. Thumbnail didn't generated as expected in few seconds.
+   - Lack of patience😅, It takes time to appear. slight delay in event notification
 
 
+---
 Debugging & Error Fixing Sources :
-https://derekurizar.medium.com/aws-lambda-python-pil-cannot-import-name-imaging-11b2377d31c4
-https://github.com/keithrozario/Klayers/tree/master/deployments/python3.12
+- [Medium](https://derekurizar.medium.com/aws-lambda-python-pil-cannot-import-name-imaging-11b2377d31c4)
+- [Layer-used](https://github.com/keithrozario/Klayers/tree/master/deployments/python3.12)
