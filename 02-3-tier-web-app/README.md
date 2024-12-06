@@ -14,3 +14,8 @@ VPC in ap-south-1 zone
 3 Public Subnets, one in each AZ
 3 Private Subnets, one in each AZ
 Route Table configurations (main and 2nd)
+
+
+---
+## **ACKNOWLEDGEMENTS**
+- [aws-workshops](https://github.com/aws-samples/aws-three-tier-web-architecture-workshop)
