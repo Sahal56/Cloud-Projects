@@ -1,5 +1,8 @@
 other/
 */*secrets/
+*/*.sh
+
+*/node_modules
 
 */*.pem
 */*build*
@@ -12,7 +15,7 @@ other/
 *.DS_Store
 
 # Local .terraform directories
-**/.terraform/*
+*/.terraform/*
 
 # .tfstate files
 *.tfstate
