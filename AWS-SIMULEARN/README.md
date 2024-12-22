@@ -1,5 +1,5 @@
 # **AWS SIMULEARN**
-Translate business problems into technical solutions— powered by generative AI
+This my hands on troubleshooting AWS services & fixing them
 
 ### **About AWS SimuLearn**
 - With 200+ trainings available select your topic, role, or industry, engage with a virtual customer, develop architecture proposals with constructive feedback, then learn to build your AWS solutions, risk free.
@@ -16,5 +16,6 @@ Referrence : [LINK](https://aws.amazon.com/training/digital/aws-simulearn/)
 ![ConnectingVPCs](https://github.com/user-attachments/assets/19c19a4b-8c2f-4c6d-a7fb-5f3fd7bad171)
 
 ![DatabasesinPractice](https://github.com/user-attachments/assets/325ce5d9-8633-4742-a01d-4bc5739154f9)
+
 
 
