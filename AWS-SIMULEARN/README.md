@@ -17,5 +17,4 @@ Referrence : [LINK](https://aws.amazon.com/training/digital/aws-simulearn/)
 
 ![DatabasesinPractice](https://github.com/user-attachments/assets/325ce5d9-8633-4742-a01d-4bc5739154f9)
 
-<img width="515" alt="ec2-up" src="https://github.com/user-attachments/assets/34b60446-9050-4e27-8278-2e428c9b8666">
 
