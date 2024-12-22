@@ -27,7 +27,7 @@
 
 <img width="1389" alt="proj-3-tier-2-output-3" src="https://github.com/user-attachments/assets/48ad83cc-8e83-45f8-9afb-59ba1f5479d0" />
 
- > For All Laptop & Mobile SS : [🎯 Click here [🎯](./output-ss/output.md)
+ > For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/output.md)
 
 
 > 
