@@ -2,7 +2,7 @@ other/
 */*secrets/
 */*.sh
 
-*/node_modules
+*/*node_modules*
 
 */*.pem
 */*build*
