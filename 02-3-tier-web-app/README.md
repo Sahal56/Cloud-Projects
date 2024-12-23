@@ -12,7 +12,29 @@
 
 ![architecture-3-tier-web-app](https://github.com/user-attachments/assets/cc132183-8473-49b3-bcdd-1bc0a11979d5)
 
+Overview :
+- As shown above, in our 3-Tier architecture comprising of Web Tier, App Tier and Database Tier, public facing Application Load Balancer forwards serves as endpoint for clients.
+- ALB forwards client's request to Web Tier Instances which are running Nginx reverse proxy that serves React.js website (Front-end)
+- Front end redirects our API calls to App Tier's Internal Application Load Balancer
+- Internal ALB, which iin turns forwards traffic to App Tier's Instances which is configurred to run Node.js app service (Back-end)
+- Back end manipulates data in an Aurora (MySQL compatible) Multi-AZ Database and returns it to Web Tier.
 
+Other Details :
+- security :
+    - configured security group to recieve incoming traffic from specified security group only. i.e web tier instances SG onnly allow HTTP traffic from ALB SG and so on
+    - default NACL is utilised as of now. (will improve in future versions)
+    - S3 bucket has restrictive Policy which allows acces to only specified Role following prinicple of least privilege
+    - IAM Role and Instance Profile for our EC2 instance.
+- Application code files, web-tier, app-tier & nginx.conf file is stored in S3 bucket. In addition to this, S3 Gatewat Endpoint is utilised to allow EC2 instances or any resources in VPC to access our bucket with less networking costs.
+- For creating AMI : (used AWS Management Console)
+    - Web Tier : Temporary Instance launched in Public Subnet. EC2 instance connect is used to connect Launch Instance. Installed necessary packages & code files, configuring Nginx to redirect request to Internal ALB
+    - App Tier : Temporary Instance launched in Private Subnet. We have deployed **EC2 Instance Connect Endpoint (launched in June 2023)** in our Private Subnet which allows hassle free ssh access to our intsancess just by modifying security group rules
+    - Region : us-east-1 | N.Virginia
+
+
+> Note : In Aurora, I have not created the Read Replica due to costs. Few Credits left
+
+---
 ## **Prerequisites**
 - This project comprises some costs
 
@@ -30,18 +52,9 @@
  > For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/output.md)
 
 
-> 
 ---
-# Flow
-    - first of all creating vpc and components like cidr-range, subnets, ig, route tables, security groups, nacl, load balancers
-    - application resoucces, react app, launch template, auto scalinh group for both web and app tier
-    - database : with configurations
 
-VPC in ap-south-1 zone
-1 Internet Gateway
-3 Public Subnets, one in each AZ
-3 Private Subnets, one in each AZ
-Route Table configurations (main and 2nd)
+
 
 
 ---
