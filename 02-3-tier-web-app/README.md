@@ -36,7 +36,29 @@ Other Details :
 
 ---
 ## **Prerequisites**
-- This project comprises some costs
+- This project comprises some costs. (Used AWS Credits)
+- For an estimate running of 3 hours, it should be < $3.
+- We have used region : `us-east-1`, so prices of some services are on basis of that region.
+
+| **Service**    | **EC2** | **EBS** | **ELB** | **CloudWatch** | **RDS** |
+|----------------|---------|---------|---------|----------------|---------|
+|Free Tier Limits| <img width="270" alt="prequisite-ec2" src="https://github.com/user-attachments/assets/b49faa47-6bc9-464b-9438-a123b5decc0d" /> | <img width="263" alt="prequisite-elastic-block-storage" src="https://github.com/user-attachments/assets/459027d7-0a0c-42ca-8008-0ba205082be4" /> | <img width="262" alt="prequisite-elastic-load-balancing" src="https://github.com/user-attachments/assets/994b382c-1e5b-41ff-a758-385b692ea98d" /> | <img width="263" alt="prequisite-cloudwatch" src="https://github.com/user-attachments/assets/f9673388-e152-4e92-82f8-3891080bdae6" /> | <img width="266" alt="prequisite-rds" src="https://github.com/user-attachments/assets/92876c17-402c-43ac-a7e9-8e817511cf80" /> |
+
+- Although RDS come under free tier, but we have utilised Aurora, along with Multi-AZ. So will be charged for 2 Instances: Primary and Standby
+- Some services used in this project not covered under free tier
+- Region : `N.Virginia | us-east-1`
+
+| **Service**    | **NAT Gateway** | **Elastic-IP for NAT** | **Auroura** |
+|----------------|-----------------|------------------------|-------------|
+| Charges        | <img width="610" alt="pricing-nat-gw-us-east-1" src="https://github.com/user-attachments/assets/1ca2424e-b05a-475a-9bf3-5229446d89c4" /> | <img width="663" alt="pricing-public-ip" src="https://github.com/user-attachments/assets/4aab1ff5-4212-4657-bac6-407efa1e8a88" /> |<img width="752" alt="pricing-aurora-us-east-1" src="https://github.com/user-attachments/assets/b9884d08-6c62-4757-9163-7575949ba120" /> |
+
+
+
+
+
+
+
+
 
 
 ---
@@ -49,11 +71,16 @@ Other Details :
 
 <img width="1389" alt="proj-3-tier-2-output-3" src="https://github.com/user-attachments/assets/48ad83cc-8e83-45f8-9afb-59ba1f5479d0" />
 
- > For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/output.md)
-
+> For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/README.md)
 
 ---
+## **Setup In-Depth**
 
+- Most of the services are provision using Terraform (Infrastructure as Code), while some paid service like Aurora and NAT GW are provision using AWS Management Console.
+- We have used AWS Management Console:
+    - For Creating AMI
+    - For Deploying EC2 Connect Endpoint in Private Subnet
+    - Temporary Security Group & Temporary In/Outbound Rules modification for testing front-end with back-end and database
 
 
 
