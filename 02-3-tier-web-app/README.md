@@ -73,15 +73,88 @@ Other Details :
 
 > For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/README.md)
 
+
+---
+## **Explanation**
+
 ---
 ## **Setup In-Depth**
 
-- Most of the services are provision using Terraform (Infrastructure as Code), while some paid service like Aurora and NAT GW are provision using AWS Management Console.
+- Most of the services are provision using Terraform (Infrastructure as Code), while some paid service like Aurora are provision using AWS Management Console.
 - We have used AWS Management Console:
+    - For uploading app files to S3 bucket
     - For Creating AMI
     - For Deploying EC2 Connect Endpoint in Private Subnet
     - Temporary Security Group & Temporary In/Outbound Rules modification for testing front-end with back-end and database
 
+#### 1. Basic Environment Setup
+- Create a shell file : `set-env.sh` and replace your AWS access key & secret key
+> Don't share this file anywhere : post or github
+> Use Gitignore to restrict tracking this file
+
+```sh
+$ touch set-env.sh
+```
+```
+#!/bin/bash
+
+# Define environment variables
+export TF_VAR_region=us-east-1
+export TF_VAR_access_key={your access key here}
+export TF_VAR_secret_key={your secret key here}
+```
+
+Make it executable
+```sh
+$ chmod +x set-env.sh
+```
+
+- every time you use terraform, make sure env variables are set. by running, shown as below
+```sh
+$ source set-env.sh
+```
+
+- Create a varibles file `terraform.tfvars` & replace with your credentials. You can modify CIDR IP Range, Regions, AZ if you want
+```sh
+user_name    = "your AWS username"
+project_name = "your project name"
+
+# VPC
+netw_cidr            = "10.0.0.0/16"
+vpc_azs              = ["us-east-1a", "us-east-1b", "us-east-1c"]
+subnet_public_cidrs  = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
+subnet_private_cidrs = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
+subnet_db_cidrs      = ["10.0.7.0/24", "10.0.8.0/24", "10.0.9.0/24"]
+
+s3_bucket_name = "your S3 bucket name"
+
+```
+
+2. Let's provision infrastruture
+- we will be provisioning step by step
+    1. First of all, in `main.tf` comment out every modules exept `vpc`, `route_tables`, `security_groups`
+
+**Initialize**
+```sh
+$ terraform init
+```
+
+**Plan the Infrastructure**
+```sh
+$ terraform plan
+```
+**Apply the Infrastructure**
+```sh
+$ terraform apply
+```
+> Enter `yes`, if all appears okay. Alternatively use `-auto-approve` to avoid everytime entering yes
+
+- Isolated Network with following components will be created
+    - VPC
+    - Subnets
+    - Route Tables
+    - Internet Gateway
+    - Security Groups
 
 
 ---
