@@ -78,24 +78,57 @@ Other Details :
 ## **Explanation**
 
 1. Networking & Security:
-    1. Virtual Private Cloud (VPC) is created in AWS Region `us-east-1` or N.Virginia, with CIDR `10.0.0.0/16` (Max Size allowed in AWS for VPC).
+    1. Virtual Private Cloud (VPC) is created in AWS Region `us-east-1` or N.Virginia, with CIDR `10.0.0.0/16` (Max Size allowed in AWS for VPC, Addresses: 65,536).
     2. Three Avaialability Zones (AZ) are used `us-east-1a`, `us-east-1b`. `us-east-1c`.
-    3. There re total `9` Subnets, `3` for each Web Tier, App Tier & Database Tier with Subnet CIDRs as given above in Diagram respectively.
+    3. Subnets : Total: `9` Subnets | for each Tier : `3`, Subnets, `256` Addresses
+        - Web Tier : `10.0.0.1/24`, `10.0.0.2/24`, `10.0.0.3/24`
+        - App Tier : `10.0.0.4/24`, `10.0.0.5/24`, `10.0.0.6/24`
+        - Database Tier: `10.0.0.7/24`, `10.0.0.8/24`, `10.0.0.9/24`
     4. Internet Gateway attached to our VPC.
     5. Route Tables :
         1. Route Table for Public Subnets : Allows outbound '0.0.0.0/0' to Internet via Internet Gateway.
-        2. Route Table for Private Subnets : Allow communication inside our VPC CIDR. Temporary Internet Access given for creating AMI for App-Tier instances utilizing NAT Gateway.
+        2. Route Table for Private Subnets : Allow communication inside our VPC CIDR. Temporary Route Entry with target as NAT Gateway for Internet Access, while creating AMI for App-Tier instances.
         3. Route Table for Database Subnets : Allow communication inside our VPC CIDR.
-        4. Route Table created by Default when VPC is created. kept as it is.
+        4. Route Table created by Default when VPC is created, kept as it is.
     6. Security Groups :
         1. ALB SG : Allows inbound from anywhere (internet).
         2. Web Tier SG : Allows inbound from ALB SG only.
-        3. Internal ALB SG : Allows inbound from Web Tier SG only. Tempoary Access given to EC2 SG, while cretion of Web Tier AMI, for backend testing purpose.
+        3. Internal ALB SG : Allows inbound from Web Tier SG only. Tempoary Inbound Access given to `launch wizard 2` SG, while creation of Web Tier AMI, for backend testing purpose.
         4. App Tier SG : Allows inbound from Internal SG only.
-        5. DB Tier SG : Allows inbound from App Tier SG only. empoary Access given to EC2 SG, while cretion of App Tier AMI, for testing purpose.
-        6. Other Two Security Groups are created for connectivity between EC2 in App Tier & EC2 Instance Connect Endpoint.(change)
-    7. 
-       
+        5. DB Tier SG : Allows inbound from App Tier SG only. Tempoary Access given to EC2 SG, while cretion of App Tier AMI, for testing purpose.
+        6. Other SGs (temporary for creating AMIs & connectivity purposes):
+            - Web Tier (1) : `launch wizard 2` SG for EC2. SSH + Allow HTTP for EC2 Instance Connect.
+            - App Tier (2) : `sg-ec2-instance` SG for EC2 & `sg-ec2-connect-endpoint `SG for EC2 Instance Connect Endpoint for connectivity purpose.
+        7. SG created by Default when VPC is created, kept as it is.
+2. Database :
+    - DB Subnet Groups : It includes three AZs. Refer `Database Tier` above.
+    - DB : Aurora Multi AZ MySQL compatible database
+        - Version : Aurora 3.05.2 (compatible with MySQL 8.0). (MySQL old will charge more as per RDS Extended Support)
+        - Instance : `db.t4g.medium`, burstable, standard, dev/test
+    - NOTE :
+        - In Multi AZ, there is one Standby Replica Only. Although we can create Read Replica in AZ `us-east-1b`, for extra cost we have not created it. In future better Web Application we will use it, for SURE 💯
+        - Database is stopped temporarily for 1 day! (further Project continued in 2nd day, due to wedding season😅 I have to attend one)
+3. S3 :
+    - **S3 Bucket** : It is created in `us-east-1` region, name : `proj-3-tier-bucket-sahal`, with Private Access Control List (ACL), attached policy attached which has restrictive access to EC2's `IAM Role` & `Account User` with only `GetObject, PutObject, DeleteObject` actions, following `**principle of least privilege (PoLP)**`
+    - **S3 Gateway Endpoint** : Although EC2 instance, while creating AMIs, can access & read data from our buket, there will be networking costs associated it with(S3 data transfer will go through internet/less secure). So, to avoid we have deployed this endpoint in region and only in Web Tier & App Tier Subnets only. **Benefits** : `Secure Data Transfer | $0 Data transfer cost`
+    - Data : It is uploaded via AWS S3 Management Console for simplicity
+4. EC2 Instance Connect Endpoint :
+    - It is new service by AWS (June 2023), which allows to connect (SSH/RDP) to Private EC2 Instance, removing complexity associated with connecting to resources in Private Subnets.
+    - So, No to `( Bastion Hosts | Systems Manager SSM)` required to connect to EC2 Instances in Private Subnets (No Public IP).
+    - We just have to use & configured Security Groups.
+5. Compute :
+    1. Amazon Machine Image :
+        - The process of creating AMI is same for both Tiers with slight difference of `Allocate Public IP` on in Web Tier.
+        - Instances eligible for free tier : amazon linux 2 is being utilized
+        - IAM instance profile is created & use as per EC2 Role which has ReadOnlyS3 Access.
+        - Standard General Purpose SSD GP3 with 8GB is used
+    2. Application Load Balancer (ALB) :
+        - Public Facing ALB : It serves as endpoint for Internet Clients. It forwards requests to Web Tier ASG's Instances on `port 80`, where NGINX server is configured to serve React Front-End.
+        - Internal ALB : It server as endpoint for Web Tier Instances. It forwards traffic to App Tier ASG's Instances on `port 4000`, where Node.js Service is listening on, to serve Back-End.
+        - 
+    1. Auto Scaling Groups (ASG) :
+        - There are ASG for both Web Tier and App Tier with capacity `min:0`, `max:3` `desired:1`
+        - Same configurations are there for both Tiers with Scaling based on `TargetTrackingPolicy` wiyth threshold as `min:20%` & `max:70%` respectively.
 
 
 ---
