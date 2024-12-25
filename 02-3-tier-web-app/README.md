@@ -32,7 +32,9 @@ Other Details :
     - Region : us-east-1 | N.Virginia
 
 
-> Note : In Aurora, I have not created the Read Replica due to costs. Few Credits left
+> Note : In Aurora, I have not created the Read Replica due to extra 💸 costs for each new replica/instance. We will include in Future version of this project with better 🧑‍💻 Web Application 💯.
+
+> **👇👇👇DETAILED EXPLANATION GIVEN BELOW👇👇👇**
 
 ---
 ## **Prerequisites**
@@ -77,7 +79,7 @@ Other Details :
 ---
 ## **Explanation**
 
-1. Networking & Security:
+1. **Networking & Security**:
     1. Virtual Private Cloud (VPC) is created in AWS Region `us-east-1` or N.Virginia, with CIDR `10.0.0.0/16` (Max Size allowed in AWS for VPC, Addresses: 65,536).
     2. Three Avaialability Zones (AZ) are used `us-east-1a`, `us-east-1b`. `us-east-1c`.
     3. Subnets : Total: `9` Subnets | for each Tier : `3`, Subnets, `256` Addresses
@@ -100,35 +102,42 @@ Other Details :
             - Web Tier (1) : `launch wizard 2` SG for EC2. SSH + Allow HTTP for EC2 Instance Connect.
             - App Tier (2) : `sg-ec2-instance` SG for EC2 & `sg-ec2-connect-endpoint `SG for EC2 Instance Connect Endpoint for connectivity purpose.
         7. SG created by Default when VPC is created, kept as it is.
-2. Database :
-    - DB Subnet Groups : It includes three AZs. Refer `Database Tier` above.
+2. **IAM** :
+    - IAM ROLE :
+        - It is created for EC2 instances for both Web & App Tier respectively.
+        - IAM Policy : Allows `AmazonS3ReadOnlyAccess`
+    - EC2 Instance Profile : It is Based on above IAM Role
+3. **Database** :
+    - DB Subnet Groups : It includes three AZs. Refer `1. Networking & Security > Subnets > Database Tier` above.
     - DB : Aurora Multi AZ MySQL compatible database
         - Version : Aurora 3.05.2 (compatible with MySQL 8.0). (MySQL old will charge more as per RDS Extended Support)
         - Instance : `db.t4g.medium`, burstable, standard, dev/test
     - NOTE :
         - In Multi AZ, there is one Standby Replica Only. Although we can create Read Replica in AZ `us-east-1b`, for extra cost we have not created it. In future better Web Application we will use it, for SURE 💯
         - Database is stopped temporarily for 1 day! (further Project continued in 2nd day, due to wedding season😅 I have to attend one)
-3. S3 :
+4. **S3** :
     - **S3 Bucket** : It is created in `us-east-1` region, name : `proj-3-tier-bucket-sahal`, with Private Access Control List (ACL), attached policy attached which has restrictive access to EC2's `IAM Role` & `Account User` with only `GetObject, PutObject, DeleteObject` actions, following `**principle of least privilege (PoLP)**`
     - **S3 Gateway Endpoint** : Although EC2 instance, while creating AMIs, can access & read data from our buket, there will be networking costs associated it with(S3 data transfer will go through internet/less secure). So, to avoid we have deployed this endpoint in region and only in Web Tier & App Tier Subnets only. **Benefits** : `Secure Data Transfer | $0 Data transfer cost`
     - Data : It is uploaded via AWS S3 Management Console for simplicity
-4. EC2 Instance Connect Endpoint :
+5. **EC2 Instance Connect Endpoint** :
     - It is new service by AWS (June 2023), which allows to connect (SSH/RDP) to Private EC2 Instance, removing complexity associated with connecting to resources in Private Subnets.
     - So, No to `( Bastion Hosts | Systems Manager SSM)` required to connect to EC2 Instances in Private Subnets (No Public IP).
     - We just have to use & configured Security Groups.
-5. Compute :
+6. **Compute** :
     1. Amazon Machine Image :
         - The process of creating AMI is same for both Tiers with slight difference of `Allocate Public IP` on in Web Tier.
-        - Instances eligible for free tier : amazon linux 2 is being utilized
+        - Instances eligible for free tier : `amazon linux 2` is being utilized
         - IAM instance profile is created & use as per EC2 Role which has ReadOnlyS3 Access.
         - Standard General Purpose SSD GP3 with 8GB is used
     2. Application Load Balancer (ALB) :
         - Public Facing ALB : It serves as endpoint for Internet Clients. It forwards requests to Web Tier ASG's Instances on `port 80`, where NGINX server is configured to serve React Front-End.
         - Internal ALB : It server as endpoint for Web Tier Instances. It forwards traffic to App Tier ASG's Instances on `port 4000`, where Node.js Service is listening on, to serve Back-End.
-        - 
-    1. Auto Scaling Groups (ASG) :
-        - There are ASG for both Web Tier and App Tier with capacity `min:0`, `max:3` `desired:1`
-        - Same configurations are there for both Tiers with Scaling based on `TargetTrackingPolicy` wiyth threshold as `min:20%` & `max:70%` respectively.
+        - Target Groups : Both Tiers ALB TG are configured similarly, with session maintenance on Internal is removed
+        - Listener Rules : For Both Tier ALB LR, It listens on `port: 80` only HTTP as of now, and forwards traffic/requests to respective target groups.
+    3. Auto Scaling Groups (ASG) :
+        - There are ASG for both Web Tier and App Tier with capacity `min: 0`, `max: 3` `desired: 1`
+        - Same configurations are there for both Tiers with Scaling based on `TargetTrackingScaling` with `ASGAverageCPUUtilization` and threshold as `min: 20%` & `max: 70%` respectively.
+        - Launch Template : For both Tiers LT is configure to have respective AMI and VPC Security Groups
 
 
 ---
