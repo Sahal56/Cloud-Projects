@@ -77,6 +77,27 @@ Other Details :
 ---
 ## **Explanation**
 
+1. Networking & Security:
+    1. Virtual Private Cloud (VPC) is created in AWS Region `us-east-1` or N.Virginia, with CIDR `10.0.0.0/16` (Max Size allowed in AWS for VPC).
+    2. Three Avaialability Zones (AZ) are used `us-east-1a`, `us-east-1b`. `us-east-1c`.
+    3. There re total `9` Subnets, `3` for each Web Tier, App Tier & Database Tier with Subnet CIDRs as given above in Diagram respectively.
+    4. Internet Gateway attached to our VPC.
+    5. Route Tables :
+        1. Route Table for Public Subnets : Allows outbound '0.0.0.0/0' to Internet via Internet Gateway.
+        2. Route Table for Private Subnets : Allow communication inside our VPC CIDR. Temporary Internet Access given for creating AMI for App-Tier instances utilizing NAT Gateway.
+        3. Route Table for Database Subnets : Allow communication inside our VPC CIDR.
+        4. Route Table created by Default when VPC is created. kept as it is.
+    6. Security Groups :
+        1. ALB SG : Allows inbound from anywhere (internet).
+        2. Web Tier SG : Allows inbound from ALB SG only.
+        3. Internal ALB SG : Allows inbound from Web Tier SG only. Tempoary Access given to EC2 SG, while cretion of Web Tier AMI, for backend testing purpose.
+        4. App Tier SG : Allows inbound from Internal SG only.
+        5. DB Tier SG : Allows inbound from App Tier SG only. empoary Access given to EC2 SG, while cretion of App Tier AMI, for testing purpose.
+        6. Other Two Security Groups are created for connectivity between EC2 in App Tier & EC2 Instance Connect Endpoint.(change)
+    7. 
+       
+
+
 ---
 ## **Setup In-Depth**
 
