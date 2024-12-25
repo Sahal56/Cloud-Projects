@@ -66,6 +66,12 @@ Other Details :
 ---
 ## **Output**
 
+<!--
+#### **Video**
+
+**DB FailOver**
+-->
+
 #### **Screenshots - Laptop**
 <img width="1401" alt="proj-3-tier-2-output-1" src="https://github.com/user-attachments/assets/8ff8d901-207e-444c-8b1e-12b86a6253bf" />
 
@@ -140,6 +146,7 @@ Other Details :
         - Launch Template : For both Tiers LT is configure to have respective AMI and VPC Security Groups
 
 
+<!--
 ---
 ## **Setup In-Depth**
 
@@ -219,7 +226,7 @@ $ terraform apply
     - Internet Gateway
     - Security Groups
 
-
+-->
 ---
 ## **ACKNOWLEDGEMENTS**
 - [aws-workshops](https://github.com/aws-samples/aws-three-tier-web-architecture-workshop)
