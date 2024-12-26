@@ -73,7 +73,7 @@ https://github.com/user-attachments/assets/3f860210-9560-4c7a-a394-7c164316bcbc
 
 <img width="1389" alt="proj-3-tier-2-output-3" src="https://github.com/user-attachments/assets/48ad83cc-8e83-45f8-9afb-59ba1f5479d0" />
 
-> For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/README.md)
+> For All Laptop & Mobile SS : [🎯Click-here🎯](./results/README.md)
 
 > ALso, there is slight mistake from my side in Output SS, Arch Diagram has `us-south-1c`, it should be `us-east-1c` which I have corrected after.
 
