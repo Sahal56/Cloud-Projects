@@ -58,12 +58,13 @@ Other Details :
 
 ---
 ## **Output**
+![proj-3-tier-recording-2-short-crud](https://github.com/user-attachments/assets/1898625b-0a2c-41ed-a03d-09349696456a)
 
 #### **Video - Web App**
-
+Check out at Drive : [Link](https://drive.google.com/file/d/1ZTtZSYkkQ2KowFhqZti1SnSH_pdNzdaB/view?usp=drive_link)
 
 #### **Video - Aurora DB Failover**
-
+https://github.com/user-attachments/assets/3f860210-9560-4c7a-a394-7c164316bcbc
 
 #### **Screenshots - Laptop**
 <img width="1401" alt="proj-3-tier-2-output-1" src="https://github.com/user-attachments/assets/8ff8d901-207e-444c-8b1e-12b86a6253bf" />
