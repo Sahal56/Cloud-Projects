@@ -1,6 +1,6 @@
 other/
 */*secrets/
-# */*s.sh
+secrets/*
 
 */*node_modules*
 
