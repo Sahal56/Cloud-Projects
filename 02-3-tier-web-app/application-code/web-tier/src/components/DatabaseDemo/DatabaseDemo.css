@@ -1,0 +1,171 @@
+/* General body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure body takes full height */
+}
+
+/* Main container to center content and add padding */
+.container {
+  flex: 1;
+  /* Ensure the container stretches */
+  padding: 20px;
+  /* Padding around content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Title styling */
+#title {
+  color: white;
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* Table container */
+.table-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 1em;
+  overflow-x: auto;
+}
+
+/* Table styles */
+#transactions {
+  font-size: larger;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#transactions td,
+#transactions th {
+  border: 1px solid rgb(9, 81, 187);
+  color: white;
+  padding: 8px;
+  text-align: center;
+}
+
+#transactions tr:nth-child(even) {
+  background-color: #0A0128;
+}
+
+#transactions tr:hover {
+  background-color: #221f2d;
+}
+
+#transactions th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+thead,
+tbody {
+  display: block;
+}
+
+tbody {
+  height: 300px;
+  overflow-y: auto;
+}
+
+/* Input button styles */
+input[type="button"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+
+input[type="button"]:hover {
+  background-color: #45a049;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* DELETE ALL button at the bottom */
+.delete-all {
+  margin-top: auto;
+  /* Push button to the bottom of the container */
+  padding: 8px 16px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.delete-all:hover {
+  background-color: #c62828;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #title {
+    font-size: 1.5em;
+    padding: 0.5em;
+  }
+
+  #transactions td,
+  #transactions th {
+    font-size: 0.9em;
+    padding: 6px;
+  }
+
+  input[type="button"] {
+    padding: 6px 12px;
+    font-size: 0.9em;
+  }
+
+  input[type="text"] {
+    font-size: 0.9em;
+  }
+
+  tbody {
+    height: auto;
+    overflow-y: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  #transactions {
+    font-size: smaller;
+  }
+
+  #transactions td,
+  #transactions th {
+    font-size: 0.8em;
+    padding: 4px;
+  }
+
+  input[type="button"] {
+    font-size: 0.8em;
+  }
+
+  #transactions {
+    display: block;
+    overflow-x: auto;
+  }
+
+  tbody {
+    height: auto;
+  }
+}

@@ -164,9 +164,9 @@ $ touch set-env.sh
 #!/bin/bash
 
 # Define environment variables
-export TF_VAR_region=us-east-1
-export TF_VAR_access_key={your access key here}
-export TF_VAR_secret_key={your secret key here}
+export TF_VAR_region=     # {your aws region here}
+export TF_VAR_access_key= # {your access key here}
+export TF_VAR_secret_key= # {your secret key here}
 ```
 
 Make it executable
