@@ -56,21 +56,14 @@ Other Details :
 
 
 
-
-
-
-
-
-
-
 ---
 ## **Output**
 
-<!--
-#### **Video**
+#### **Video - Web App**
 
-**DB FailOver**
--->
+
+#### **Video - Aurora DB Failover**
+
 
 #### **Screenshots - Laptop**
 <img width="1401" alt="proj-3-tier-2-output-1" src="https://github.com/user-attachments/assets/8ff8d901-207e-444c-8b1e-12b86a6253bf" />
@@ -81,6 +74,7 @@ Other Details :
 
 > For All Laptop & Mobile SS : [🎯Click-here🎯](./output-ss/README.md)
 
+> ALso, there is slight mistake from my side in Output SS, Arch Diagram has `us-south-1c`, it should be `us-east-1c` which I have corrected after.
 
 ---
 ## **Explanation**
