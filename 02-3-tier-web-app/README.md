@@ -10,7 +10,7 @@
 
 ## **Architecture**
 
-![architecture-3-tier-web-app](https://github.com/user-attachments/assets/cc132183-8473-49b3-bcdd-1bc0a11979d5)
+![architecture-3-tier-web-app](https://github.com/user-attachments/assets/a3150b6f-1704-44a9-8f7e-fe9624bfe056)
 
 Overview :
 - As shown above, in our 3-Tier architecture comprising of Web Tier, App Tier and Database Tier, public facing Application Load Balancer forwards serves as endpoint for clients.
