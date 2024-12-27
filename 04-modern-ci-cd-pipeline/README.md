@@ -1,4 +1,4 @@
-# **Modern CI CD Pipeline**
+# **Modern CI/CD Pipeline**
 
 
 ## **Architecture**
@@ -19,28 +19,24 @@
 ---
 ## **Output**
 
+#### **Hotel App hosted at App Runner**
+<img width="1112" alt="proj-ci-cd-pipeline-result-1" src="https://github.com/user-attachments/assets/b7804dc0-877a-4625-8cb6-621eb4884246" />
+<img width="1112" alt="proj-ci-cd-pipeline-result-2-crud" src="https://github.com/user-attachments/assets/9011750c-c622-4f35-bbb4-e9692e059bc1" />
+
+#### **CodePipeline**
+<img width="1421" alt="proj-ci-cd-pipeline-result-3-codepipeline" src="https://github.com/user-attachments/assets/41dbea48-1bf6-4c60-8955-1cb28e4a1a40" />
+
+#### **CodeBuild**
+<img width="1426" alt="proj-ci-cd-pipeline-result-4-codebuild" src="https://github.com/user-attachments/assets/c66057af-b3f4-4b7f-b532-a3d88da1b7d9" />
+
+#### **Testing Locally**
+<img width="1107" alt="proj-ci-cd-pipeline-result-5-locally" src="https://github.com/user-attachments/assets/0b31a9b7-9e7d-4586-95c2-a93548887783" />
+
+> For a complete workflow check at [workflow](./workflow.md)
+
 ---
-#### **Locally**
-
-1. Forking repo in local machine
-```sh
-$ git clone https://github.com/aws-samples/modern-cicd-with-github-and-aws-codepipeline.git
-```
-
-2. install required packages
-```sh
-$ cd modern-cicd-with-github-and-aws-codepipeline/
-$ npm i
-```
-
-3. Testing App locally
-```sh
-$ npm run start
-```
-4. Checking at [localhost:8081](http:localhost:8081/)
-<!--image-->
-
-
+END
+---
 
 
 <!--
