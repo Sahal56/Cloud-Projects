@@ -35,6 +35,50 @@
 > For a complete workflow check at [workflow](./workflow.md)
 
 ---
+## **Learning**
+
+#### 1. Types of repository
+![mono-multi-repo](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/monorepo.png)
+
+- monorepo (aka monolithic repository) : It is software dev practice to have single source repo for multiple projects, components e.g. front-end, backend
+- multirepo/pollyrepo: It is opposite of monorepo, different components have separte source repo. i.e. frontend, backend, other services, etc
+
+
+#### 2. Branching Strategy
+- Overview : It is set of guidelines/workflows used by dev teams to manage, collabrate on and release code efficiently within VCS.
+- Types: 
+    1. Github Workflow: simplified, single long lived branch focus on Continuos Integration & Continuos Delivery. Suitable for fast paced devlopement, SaaS apps.
+    2. Trunk-Based Development: Dev frequently merges small(incremental) change to main branch, suitable for SaaS apps.
+    3. Release Branching: Differnt version of product have separata reelease branches, for manintaining software apps, Long term support, complex apps
+    4. Forking Workflow: Mostly used in Open Source. Dev forks the main repo, submits PR(pull request) for review. One main repo, and multiple contributors/devlopers has own repo.
+ 
+| Github Workflow | Trunk Based Development Flow | Release Branching | Forking Workflow |
+|-----------------|------------------------------|-------------------|------------------|
+| ![Github Workflow](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/Branching_detail-GithubFlow.png) | ![Trunk Based Development Flow](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/Branching_detail-TrunkBased.png) | ![Release Branching](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/Branching_detail-ReleaseBranching.png) | ![Forking Workflow](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/Branching_detail-Forking.png) |
+
+#### 3. What is CI/CD?
+- CI/CD: Continuous Integration and Continuous Delivery/Deployment
+- Final Approval for deployment in Production environment:
+    - Automatic : Deployment
+    - Manual    : Delivery
+- Definition: It is a set of practices and processes in modern software development that focuses on automating the stages of application building, testing & deployment.
+- Biggest advantages we get are:
+    - frequent & reliable software update releases (within a year many compared to very few)
+    - reduce manual effort
+    - aims to improve code quality
+    - Faster Time to Market
+    - Improved Developer Productivity
+
+![CI-CD](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/cicd_diagram.png)
+
+- Continuous Integration (CI): Continuous Integration is the practice of automatically integrating code changes from multiple developers into a shared repository, usually multiple times a day. As soon as new code is merged into the repository, an automated build and testing process begins to ensure that the codebase remains stable and functional.
+- Continuous Delivery (CD): Continuous Delivery is the next step after Continuous Integration. It ensures that the integrated and tested code is always ready for release into a production-like environment. With Continuous Delivery, all changes are automatically deployed to a staging or pre-production environment after passing automated tests. However, the final decision to push code to production is still a manual trigger.
+- Continuous Deployment (CD): Continuous Deployment is a further step from Continuous Delivery. In this approach, any change that passes the CI pipeline's automated tests is automatically deployed to the production environment without any manual intervention.
+
+
+
+
+---
 END
 ---
 
