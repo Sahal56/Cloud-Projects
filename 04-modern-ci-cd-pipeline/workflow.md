@@ -188,8 +188,101 @@
 </details>
 
 
+---
+## **6. Backend CodeBuild Project**
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
 
+<img width="826" alt="proj-ci-cd-pipeline-6-bk-build-1" src="https://github.com/user-attachments/assets/ac585cf5-2f4f-477a-9c1a-143ee76bffe0" />
+<img width="515" alt="proj-ci-cd-pipeline-6-bk-build-2" src="https://github.com/user-attachments/assets/9e2daf1f-a655-4ef5-a750-66e35503de38" />
+<img width="521" alt="proj-ci-cd-pipeline-6-bk-build-3" src="https://github.com/user-attachments/assets/025582ce-4b32-47ec-bdd7-f7b3f711e78d" />
+<img width="399" alt="proj-ci-cd-pipeline-6-bk-build-4" src="https://github.com/user-attachments/assets/53100c8a-3757-43fc-9ee3-9332ffae6a9f" />
+<img width="588" alt="proj-ci-cd-pipeline-6-bk-build-5" src="https://github.com/user-attachments/assets/472363d7-dacc-4659-81e8-642ec79dd7dd" />
+<img width="514" alt="proj-ci-cd-pipeline-6-bk-build-6" src="https://github.com/user-attachments/assets/e124728a-5004-47d4-9148-9a0cd177d07d" />
+<img width="552" alt="proj-ci-cd-pipeline-6-bk-build-7" src="https://github.com/user-attachments/assets/02b465ee-b3cd-49cc-80e6-c1192a8da765" />
 
+</details>
+
+---
+## **6. Building Backend Pipeline**
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+
+<img width="799" alt="proj-ci-cd-pipeline-7-bk-pipeline-1" src="https://github.com/user-attachments/assets/d574a4b2-f37d-4454-9883-15fa6086df25" />
+<img width="568" alt="proj-ci-cd-pipeline-7-bk-pipeline-2" src="https://github.com/user-attachments/assets/b0da094b-1885-45f4-852b-d52902ee82c5" />
+<img width="416" alt="proj-ci-cd-pipeline-7-bk-pipeline-3" src="https://github.com/user-attachments/assets/db3ea2e0-f56e-4f51-ba95-75c3c92eec47" />
+<img width="415" alt="proj-ci-cd-pipeline-7-bk-pipeline-4" src="https://github.com/user-attachments/assets/bf6634ac-d650-4871-8142-ecfae7efd315" />
+<img width="551" alt="proj-ci-cd-pipeline-7-bk-pipeline-5" src="https://github.com/user-attachments/assets/b2ccbeb9-a758-417c-b0c1-c521676d3ffd" />
+<img width="303" alt="proj-ci-cd-pipeline-7-bk-pipeline-6" src="https://github.com/user-attachments/assets/e2d62c9f-d928-450e-8687-f18067caa39b" />
+<img width="555" alt="proj-ci-cd-pipeline-7-bk-pipeline-7" src="https://github.com/user-attachments/assets/7fe0b773-c6c2-4805-81af-412e191b12d6" />
+<img width="364" alt="proj-ci-cd-pipeline-7-bk-pipeline-8" src="https://github.com/user-attachments/assets/c767b7fc-85d7-493b-9451-17a825887757" />
+<img width="653" alt="proj-ci-cd-pipeline-7-bk-pipeline-9" src="https://github.com/user-attachments/assets/dc3236eb-92ff-4761-af66-b44595671007" />
+
+- But wait, Build is getting failed !!! ᶠᶸᶜᵏᵧₒᵤ! AWS Worksoppp.
+- Same again, IAM Role policy issues.
+
+<img width="295" alt="proj-ci-cd-pipeline-7-bk-pipeline-10a" src="https://github.com/user-attachments/assets/1029ceaf-937d-4ef9-bcaf-f44fc35c9832" />
+<img width="1253" alt="proj-ci-cd-pipeline-7-bk-pipeline-10b" src="https://github.com/user-attachments/assets/ad8fa204-9608-428a-97ce-6a5a04c69663" />
+<img width="969" alt="proj-ci-cd-pipeline-7-bk-pipeline-10c" src="https://github.com/user-attachments/assets/653dbd4b-d8a7-4229-9d8d-83be846c58a3" />
+<img width="501" alt="proj-ci-cd-pipeline-7-bk-pipeline-10d" src="https://github.com/user-attachments/assets/2c47f2ac-1726-4d1b-ac25-7602eddc6cf1" />
+<img width="403" alt="proj-ci-cd-pipeline-7-bk-pipeline-10e" src="https://github.com/user-attachments/assets/4eff7a94-c258-4ad3-93f8-730d10a89873" />
+<img width="430" alt="proj-ci-cd-pipeline-7-bk-pipeline-10f" src="https://github.com/user-attachments/assets/01f6a35c-11f3-4dac-a55c-781da9de2305" />
+<img width="424" alt="proj-ci-cd-pipeline-7-bk-pipeline-10g" src="https://github.com/user-attachments/assets/113540c6-ea35-4783-9f6a-faeab330ace3" />
+<img width="343" alt="proj-ci-cd-pipeline-7-bk-pipeline-10h" src="https://github.com/user-attachments/assets/0bae9798-3f54-4b65-8630-7a975cbaf83d" />
+
+- Finally, fixed
+
+<img width="1355" alt="proj-ci-cd-pipeline-7-bk-pipeline-11a-cf-stack" src="https://github.com/user-attachments/assets/426b0b79-d0b3-4593-86b9-d587e18cce10" />
+<img width="1129" alt="proj-ci-cd-pipeline-7-bk-pipeline-11b-cf-stack-events" src="https://github.com/user-attachments/assets/bb0fc0ab-0241-4db2-8a4c-f5a90cf03bf4" />
+<img width="745" alt="proj-ci-cd-pipeline-7-bk-pipeline-11c-cf-stack-resources" src="https://github.com/user-attachments/assets/3c6e5e4c-83b3-4312-bbe5-86f5f53e267b" />
+<img width="720" alt="proj-ci-cd-pipeline-7-bk-pipeline-11d-dynamodb" src="https://github.com/user-attachments/assets/7f1930ec-3d55-40be-9834-bf96fa19d528" />
+<img width="1376" alt="proj-ci-cd-pipeline-7-bk-pipeline-11e" src="https://github.com/user-attachments/assets/abc0bb11-fba4-4e4e-b24b-ab7153ea8279" />
+
+</details>
+
+---
+## **Utilizing Filters in both Frontend & Backend Pipelines**
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+
+- Below is Backend Pipeline
+- We are filtering : include backend.yml on main branch
+- Meaning whenever any dev changes & commit to backend file, only then Backend Pipeline for backend will trigger into execution
+<img width="1103" alt="proj-ci-cd-pipeline-8-filter-bk-pipeline-1" src="https://github.com/user-attachments/assets/9de7bf88-d66a-497a-ad59-3bba237c47b8" />
+<img width="180" alt="proj-ci-cd-pipeline-8-filter-bk-pipeline-2" src="https://github.com/user-attachments/assets/506c9aa5-cecd-4ab6-b71d-e33db159d024" />
+<img width="236" alt="proj-ci-cd-pipeline-8-filter-bk-pipeline-3" src="https://github.com/user-attachments/assets/e8f1c61b-893e-4097-974f-eef830a20113" />
+<img width="955" alt="proj-ci-cd-pipeline-8-filter-bk-pipeline-4" src="https://github.com/user-attachments/assets/ba87ea67-105a-4284-8f02-dbbe9e76402a" />
+
+- Below is Frontend Pipeline
+- Here we have excluded backend.yml, to restrict Frontend Pipeline getting executed when changes to backend.yml is made.
+<img width="1113" alt="proj-ci-cd-pipeline-8-filter-fr-pipeline-1" src="https://github.com/user-attachments/assets/dcb767f9-b5a7-4c80-b10f-5b2670d1d3d8" />
+<img width="1240" alt="proj-ci-cd-pipeline-8-filter-fr-pipeline-2" src="https://github.com/user-attachments/assets/0ba4042d-9e12-4f68-8aad-8e456c86633c" />
+<img width="466" alt="proj-ci-cd-pipeline-8-filter-fr-pipeline-3" src="https://github.com/user-attachments/assets/21e1e25f-8903-4a06-ab0a-d7fbb98f28e8" />
+<img width="433" alt="proj-ci-cd-pipeline-8-filter-fr-pipeline-4" src="https://github.com/user-attachments/assets/b6715180-7e8c-4de7-8b59-9bb1d022e679" />
+
+</details>
+
+---
+## ****
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+</details>
+
+---
+## ****
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+</details>
 
 
 
@@ -200,12 +293,11 @@
 
 <!--
 
-
-
-collapse section:
+---
+## ****
 <details>
   <summary>
-    <b> SS </b>
+    <b> Expand </b>
   </summary>
 </details>
 
