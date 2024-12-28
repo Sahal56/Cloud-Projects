@@ -1,9 +1,11 @@
 # **Modern CI/CD Pipeline**
-
+- Implemented & Deployed multi-staged CI/CD pipeline using AWS CodePipeline, integrating frontend and backend workflows with unit tests and deployment stages.
+- Automated deployment of containerized applications to App Runner, using AWS Elastic Container Registry (ECR) and CloudFormation for infrastructure as code.
+- Optimized workflow by enabling GitHub based code integration with webhooks and automated triggers, streamlining branch deployments and reducing manual intervention.
+- Utilized CodePipeline filters for triggering specific build and deployment stages based on branch patterns and commit tags, ensuring efficient and targeted CI/CD workflows.
 
 ## **Architecture**
 ![arch](https://static.us-east-1.prod.workshops.aws/public/55755b07-34e5-43aa-90b3-3477fb95a29c/static/images/introduction/cicd_overview.png)
-
 
 
 ---
