@@ -393,8 +393,22 @@
 
 `Here, is SS all resources of this project, will destroy them`
 
-
-
+<img width="516" alt="proj-ci-cd-pipeline-13-cleanup-1a-cdppline" src="https://github.com/user-attachments/assets/43ffb7c2-2ced-4a49-b642-30be3aaad19e" />
+<img width="1132" alt="proj-ci-cd-pipeline-13-cleanup-1b" src="https://github.com/user-attachments/assets/90bace2f-7aca-45a3-9a05-2b77f96069f6" />
+<img width="516" alt="proj-ci-cd-pipeline-13-cleanup-2a-cf" src="https://github.com/user-attachments/assets/d7f3252e-9aab-4051-a1b6-fac8c58cb2a7" />
+<img width="1190" alt="proj-ci-cd-pipeline-13-cleanup-2b" src="https://github.com/user-attachments/assets/8c2df473-7a04-47cb-896b-66c417b0a95a" />
+<img width="1165" alt="proj-ci-cd-pipeline-13-cleanup-3a-iam-roles" src="https://github.com/user-attachments/assets/e45279fa-00db-44d9-8903-e0c7a6d4ce1e" />
+<img width="511" alt="proj-ci-cd-pipeline-13-cleanup-3b" src="https://github.com/user-attachments/assets/15dee772-0bba-4b4a-9c07-84c9e00f7f8d" />
+<img width="1425" alt="proj-ci-cd-pipeline-13-cleanup-4a-s3" src="https://github.com/user-attachments/assets/3757ef6e-4d64-4f36-a0ed-abe986d71f08" />
+<img width="410" alt="proj-ci-cd-pipeline-13-cleanup-4b" src="https://github.com/user-attachments/assets/03014fc1-925a-4fb4-af5a-8a40c1436026" />
+<img width="348" alt="proj-ci-cd-pipeline-13-cleanup-4c" src="https://github.com/user-attachments/assets/e3d42db1-0a87-4f05-a8b9-aad2cd18fe68" />
+<img width="1044" alt="proj-ci-cd-pipeline-13-cleanup-4d" src="https://github.com/user-attachments/assets/a02c8bcd-2a10-4416-80eb-95f296810409" />
+<img width="328" alt="proj-ci-cd-pipeline-13-cleanup-4e" src="https://github.com/user-attachments/assets/889378d5-2e48-4cfb-b69b-938e5a4412ee" />
+<img width="1037" alt="proj-ci-cd-pipeline-13-cleanup-4f" src="https://github.com/user-attachments/assets/f5c48da3-f543-4c1b-9d9c-8ae77082446f" />
+<img width="1052" alt="proj-ci-cd-pipeline-13-cleanup-4g" src="https://github.com/user-attachments/assets/2e9cf68b-13f4-4911-af7c-2a1fb8cfe5fe" />
+<img width="1410" alt="proj-ci-cd-pipeline-13-cleanup-4h" src="https://github.com/user-attachments/assets/8152636f-0d30-4d42-ab4c-5e1ff99c844c" />
+<img width="1434" alt="proj-ci-cd-pipeline-13-cleanup-5-cw-log-groups" src="https://github.com/user-attachments/assets/832fc094-d80f-4e6f-a1e1-3cfba0b4c7d5" />
+<img width="1430" alt="proj-ci-cd-pipeline-13-cleanup-6-ecr-private-repo" src="https://github.com/user-attachments/assets/3cac4648-ce71-4849-8b45-410e8e9574cd" />
 
 </details>
 
@@ -403,7 +417,6 @@
 ---
 
 <!--
-
 ---
 ## ****
 <details>
@@ -411,10 +424,4 @@
     <b> Expand </b>
   </summary>
 </details>
-
----
-####
-****
-```sh
-```
 -->
