@@ -206,7 +206,7 @@
 </details>
 
 ---
-## **6. Building Backend Pipeline**
+## **7. Building Backend Pipeline**
 <details>
   <summary>
     <b> Expand </b>
@@ -245,7 +245,7 @@
 </details>
 
 ---
-## **Utilizing Filters in both Frontend & Backend Pipelines**
+## **8. Utilizing Filters in both Frontend & Backend Pipelines**
 <details>
   <summary>
     <b> Expand </b>
@@ -269,23 +269,134 @@
 </details>
 
 ---
-## ****
+## **9. Troubleshooting - AppRuner, SSM**
 <details>
   <summary>
     <b> Expand </b>
   </summary>
+
+- Once Again some required permissions issue.!!!
+
+<img width="1003" alt="proj-ci-cd-pipeline-9-troubleshoot-1" src="https://github.com/user-attachments/assets/6a12406f-da1d-4e09-b535-7d7d2a330d86" />
+<img width="692" alt="proj-ci-cd-pipeline-9-troubleshoot-2" src="https://github.com/user-attachments/assets/69ce146d-4d45-47b5-8e94-aac9ee3c79ae" />
+<img width="542" alt="proj-ci-cd-pipeline-9-troubleshoot-3" src="https://github.com/user-attachments/assets/5ff889ae-7e12-49d3-940a-b45f9954acd0" />
+<img width="401" alt="proj-ci-cd-pipeline-9-troubleshoot-4" src="https://github.com/user-attachments/assets/01ca9be8-4128-4923-b141-83d574ad6902" />
+<img width="454" alt="proj-ci-cd-pipeline-9-troubleshoot-5" src="https://github.com/user-attachments/assets/a46f5e18-a9ca-4e57-86c9-5ccf91841991" />
+<img width="802" alt="proj-ci-cd-pipeline-9-troubleshoot-6" src="https://github.com/user-attachments/assets/e0bf3896-b332-49b5-81c0-b9c2058bc29f" />
+<img width="649" alt="proj-ci-cd-pipeline-9-troubleshoot-7" src="https://github.com/user-attachments/assets/5e662fd8-821c-4f4d-b15b-0218134ebbd3" />
+
+- Yayyyy. Hurrah Pipeline Works
+<img width="337" alt="proj-ci-cd-pipeline-9-troubleshoot-8" src="https://github.com/user-attachments/assets/feeb60f6-0191-49ce-8914-7c5225bddec2" />
+<img width="551" alt="proj-ci-cd-pipeline-9-troubleshoot-9" src="https://github.com/user-attachments/assets/06e52a8f-5e7e-4ea6-94e7-e6717f90a228" />
+
+- Lets check out URL of App Runer to see our app running on 💯 Cloud 💫
+<img width="723" alt="proj-ci-cd-pipeline-9-troubleshoot-10" src="https://github.com/user-attachments/assets/3a98ca3a-0a7c-48a5-b657-190116b09bd2" />
+
 </details>
 
 ---
-## ****
+## **10. Adding Deploy Stage in Frontend Pipeline**
 <details>
   <summary>
     <b> Expand </b>
   </summary>
+
+`Here will add Deploy Stage in Frontend Pipeline to deploy on AWS App Runer`
+
+<img width="1148" alt="proj-ci-cd-pipeline-10-fr-deploy-1" src="https://github.com/user-attachments/assets/13937b3c-addc-4d8a-9de9-a16bc0c2d8bd" />
+<img width="1141" alt="proj-ci-cd-pipeline-10-fr-deploy-2" src="https://github.com/user-attachments/assets/7e494bbd-990b-4f10-8f69-1462a258eb08" />
+<img width="396" alt="proj-ci-cd-pipeline-10-fr-deploy-3" src="https://github.com/user-attachments/assets/3137e779-048a-4084-b00b-96a052529f94" />
+<img width="1139" alt="proj-ci-cd-pipeline-10-fr-deploy-4" src="https://github.com/user-attachments/assets/ecdf5248-64ca-416b-b65a-cbea58fc37cf" />
+<img width="292" alt="proj-ci-cd-pipeline-10-fr-deploy-5" src="https://github.com/user-attachments/assets/8bd4729b-3e01-4466-9bf0-9cd1deb0f3dc" />
+<img width="456" alt="proj-ci-cd-pipeline-10-fr-deploy-6" src="https://github.com/user-attachments/assets/92f9caaa-0621-46cd-bfcf-f2c64f6a5f07" />
+<img width="462" alt="proj-ci-cd-pipeline-10-fr-deploy-7" src="https://github.com/user-attachments/assets/3be2a627-3aa9-4779-9b77-91bd8496509d" />
+<img width="851" alt="proj-ci-cd-pipeline-10-fr-deploy-8" src="https://github.com/user-attachments/assets/b33d45e9-50c9-4a81-8cc1-2bdb82d74dc6" />
+<img width="683" alt="proj-ci-cd-pipeline-10-fr-deploy-9" src="https://github.com/user-attachments/assets/982c9b3f-6e77-4402-baa9-6e97bf50787d" />
+<img width="355" alt="proj-ci-cd-pipeline-10-fr-deploy-10" src="https://github.com/user-attachments/assets/08884cd7-d752-41bd-8dea-812d6c1e3a0d" />
+<img width="389" alt="proj-ci-cd-pipeline-10-fr-deploy-11" src="https://github.com/user-attachments/assets/d7db9a7f-7214-4df4-93d5-a4b410e06253" />
+
 </details>
 
+---
+## **11. Applying filters on Branches : main, feature/****
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+
+<img width="801" alt="proj-ci-cd-pipeline-11-filters-branch-1" src="https://github.com/user-attachments/assets/a016f3be-27c0-44a2-acbe-60082c80f7db" />
+<img width="1044" alt="proj-ci-cd-pipeline-11-filters-branch-2" src="https://github.com/user-attachments/assets/de8de19a-5bb2-4cee-9ee6-f5733306de05" />
+<img width="221" alt="proj-ci-cd-pipeline-11-filters-branch-3" src="https://github.com/user-attachments/assets/c3fe5b9d-6d9f-454f-8b50-ad6a478741a3" />
+<img width="452" alt="proj-ci-cd-pipeline-11-filters-branch-4" src="https://github.com/user-attachments/assets/ab1de2f2-a616-498f-bc94-74fe5c72fd54" />
+<img width="372" alt="proj-ci-cd-pipeline-11-filters-branch-5" src="https://github.com/user-attachments/assets/4cb906c5-6657-4e7c-9a08-6002b43971ec" />
+
+- Lets change file and push in branch : `feature/**`
+- then pushing it: `git push` and creating `PR request`
+- and finally accecpting `Merge PR`
+<img width="801" alt="proj-ci-cd-pipeline-11-filters-branch-6" src="https://github.com/user-attachments/assets/cd9948ce-ea4e-4279-b163-179ce04c855e" />
+<img width="1323" alt="proj-ci-cd-pipeline-11-filters-branch-7" src="https://github.com/user-attachments/assets/af20b497-ae00-4c59-978b-cf1fe2dd5ae1" />
+<img width="929" alt="proj-ci-cd-pipeline-11-filters-branch-8" src="https://github.com/user-attachments/assets/1e68dade-9726-4cd1-be2e-345a05baf20b" />
+<img width="838" alt="proj-ci-cd-pipeline-11-filters-branch-9" src="https://github.com/user-attachments/assets/00adbc8f-e834-45b6-8d26-cedfdaa5cb11" />
+<img width="564" alt="proj-ci-cd-pipeline-11-filters-branch-10" src="https://github.com/user-attachments/assets/8ee0ad7e-a639-4bed-a3d3-8316a4ef2716" />
+<img width="822" alt="proj-ci-cd-pipeline-11-filters-branch-11" src="https://github.com/user-attachments/assets/41057ca0-0392-4bf9-a9e0-0a95a6711e0c" />
+
+- Lets test our App
+<img width="1008" alt="proj-ci-cd-pipeline-11-filters-branch-12a" src="https://github.com/user-attachments/assets/a85db637-6f46-43a2-968d-7419d07ed252" />
+<img width="549" alt="proj-ci-cd-pipeline-11-filters-branch-12b" src="https://github.com/user-attachments/assets/37ee227d-60ad-4178-8b9e-6152389e4553" />
+<img width="220" alt="proj-ci-cd-pipeline-11-filters-branch-12c" src="https://github.com/user-attachments/assets/56ad9e33-723a-488e-9fbb-b61284cc2939" />
+
+- It works.!!!
+
+</details>
+
+---
+## **12. Final Results/Working of our Hotel App**
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+
+`Below are some resources which are created using CloudFormation, when CodePipline is executed`
+
+- Testing Hotel App, hosted on App Runner
+<img width="1112" alt="proj-ci-cd-pipeline-12-result-1a" src="https://github.com/user-attachments/assets/6e36f0c2-e11f-42f2-9f1e-b96e7a3d25f9" />
+<img width="1112" alt="proj-ci-cd-pipeline-12-result-1b" src="https://github.com/user-attachments/assets/9c5b684f-9b86-47ba-b826-52fd9c83e62e" />
+<img width="322" alt="proj-ci-cd-pipeline-12-result-1c" src="https://github.com/user-attachments/assets/406b8fd2-628d-4a41-bd6c-331dd08a69fe" />
+<img width="368" alt="proj-ci-cd-pipeline-12-result-1d" src="https://github.com/user-attachments/assets/2253ed3d-ec86-4ec8-8c83-c33da5890cab" />
+
+- This is my Private ECR repo
+<img width="1423" alt="proj-ci-cd-pipeline-12-result-2a-ecr" src="https://github.com/user-attachments/assets/c1d49b20-7d80-4b63-8cd8-f3822bd92fd2" />
+
+- DynamoDB Tables
+<img width="1427" alt="proj-ci-cd-pipeline-12-result-3a-dynamoDB-tables" src="https://github.com/user-attachments/assets/b2627096-bc41-41a9-8c4c-315fe1220a31" />
+<img width="1099" alt="proj-ci-cd-pipeline-12-result-3b" src="https://github.com/user-attachments/assets/81db9e62-ed8d-456b-8a3d-ad1292b7663f" />
+
+- CloudFormation Stacks
+<img width="1411" alt="proj-ci-cd-pipeline-12-result-4a-CF-stacks" src="https://github.com/user-attachments/assets/d7bbe7f0-3577-4f6d-8a2f-adfbbcb6fe1d" />
+<img width="1428" alt="proj-ci-cd-pipeline-12-result-4b" src="https://github.com/user-attachments/assets/2f45c03c-2b24-41f1-a48d-85e1e8dd6ed3" />
+<img width="874" alt="proj-ci-cd-pipeline-12-result-4c" src="https://github.com/user-attachments/assets/a76f1960-5e0b-4b45-b1d1-b41bb266b044" />
+
+- CodeBuild Projects
+<img width="1426" alt="proj-ci-cd-pipeline-12-result-5-CodeBuild" src="https://github.com/user-attachments/assets/175af154-975c-4a51-b96e-8edb7fca9d01" />
+
+- CodePipelines
+<img width="1421" alt="proj-ci-cd-pipeline-12-result-6-CodePipeline" src="https://github.com/user-attachments/assets/027cbf19-c5f0-450d-a0bc-14d53307219c" />
+
+</details>
+
+---
+## **13. Clean Up**
+<details>
+  <summary>
+    <b> Expand </b>
+  </summary>
+
+`Here, is SS all resources of this project, will destroy them`
 
 
+
+
+</details>
 
 ---
 **END**
