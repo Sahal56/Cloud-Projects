@@ -142,6 +142,27 @@ https://github.com/user-attachments/assets/3f860210-9560-4c7a-a394-7c164316bcbc
 
 
 <!--
+
+## **Troubleshooting**
+
+EC2 Instance connect Endpoint SEC gaps: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/eice-security-groups.html
+
+in security groups for creating ami
+│ Error: Cycle: module.security_groups.aws_security_group.sg_ec2_instance, module.security_groups.aws_security_group.sg_ec2_connect_endpoint
+
+To remove it I have used aws_vpc_security_group_egress_rule aws_vpc_security_group_ingress_rule
+
+
+ec2 role not visible  while launching  ec2 instances
+solution add iam instance profile
+
+both are same
+* A role is a collection of permissions (via policies) that gets attached to an IAM user to grant/revoke resource access rights to that user. An instance profile is kind of a wrapper around a role that allows the role to be attached to an instance
+* Yes, an IAM instance profile and IAM role can have the same name if you create them using the AWS Management Console. However, if you use the AWS CLI, AWS API actions, or an AWS SDK to create the IAM role, you must create the instance profile separately and the names can be different.
+* but Principal in S3 bucket policy can be role only & not instance profile
+-->
+
+<!--
 ---
 ## **Setup In-Depth**
 
