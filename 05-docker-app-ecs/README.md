@@ -86,8 +86,15 @@
 |-----------------------|
 | <img width="1664" alt="proj-5-5c-alb" src="https://github.com/user-attachments/assets/bb0f77c0-bc5f-4cd1-a67b-14d37f9d3df3" /> |
 
+
+
+
 <details>
  <summary> <b> Blue Green Deployment </b> </summary>
+ 
+ | **video demo** |
+ |----------------|
+ | https://github.com/user-attachments/assets/97be68ad-b16a-4d88-a24c-88756a5e0216 |
 
 
 | **changes** |
