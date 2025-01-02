@@ -11,45 +11,46 @@
 
  ## **Key Components of Amazon ECS**
 ### Introduction to Amazon ECS
-- Amazon Elastic Container Service (ECS) is a fully managed container orchestration service provided by AWS that makes it easy to deploy, manage, and scale containerized applications.
-- ECS supports Docker containers and allows you to run and manage containers on a cluster of EC2 instances or using AWS Fargate, a serverless compute engine.
+  - Amazon Elastic Container Service (ECS) is a fully managed container orchestration service provided by AWS that makes it easy to deploy, manage, and scale containerized applications.
+  - ECS supports Docker containers and allows you to run and manage containers on a cluster of EC2 instances or using AWS Fargate, a serverless compute engine.
 
 1. Clusters:
-- A logical grouping of container instances or tasks.
-- Clusters can run on EC2 instances, AWS Fargate, or a mix of both.
+  - A logical grouping of container instances or tasks.
+  - Clusters can run on EC2 instances, AWS Fargate, or a mix of both.
 
 2. Task Definitions:
-- Blueprint for your application.
-- Specifies parameters for the container, such as Docker image, CPU, memory, port mappings, and environment variables.
-- Defines multiple containers within a single task if needed.
+  - Blueprint for your application.
+  - Specifies parameters for the container, such as Docker image, CPU, memory, port mappings, and environment variables.
+  - Defines multiple containers within a single task if needed.
 
 3. Tasks and Services:
-- Tasks: A running instance of a task definition. It is the smallest unit of work in ECS.
-- Services: Maintain the desired number of task instances. Can be associated with load balancers to distribute traffic across tasks.
+  - Tasks: A running instance of a task definition. It is the smallest unit of work in ECS.
+  - Services: Maintain the desired number of task instances. Can be associated with load balancers to distribute traffic across tasks.
 
 4. Container Instances:
-- EC2 instances registered to the ECS cluster.
-- Run the ECS agent, which manages the tasks.
+  - EC2 instances registered to the ECS cluster.
+  - Run the ECS agent, which manages the tasks.
 
 5. ECS Agent:
-- A container running on each container instance that communicates with the ECS control plane to manage tasks.
+  - A container running on each container instance that communicates with the ECS control plane to manage tasks.
 
 6. Launch Types:
-- EC2 Launch Type: Deploys tasks on a cluster of Amazon EC2 instances managed by the user.
-- Fargate Launch Type: Deploys tasks on serverless infrastructure managed by AWS, removing the need to manage EC2 instances.
+  - EC2 Launch Type: Deploys tasks on a cluster of Amazon EC2 instances managed by the user.
+  - Fargate Launch Type: Deploys tasks on serverless infrastructure managed by AWS, removing the need to manage EC2 instances.
 
 7. Task Scheduler:
-- Places tasks based on the specified placement strategy and constraints.
-- Ensures the desired state of tasks is maintained in the cluster.
+  - Places tasks based on the specified placement strategy and constraints.
+  - Ensures the desired state of tasks is maintained in the cluster.
 
 8. Load Balancing:
-- Integrates with Elastic Load Balancing (ELB) to distribute incoming traffic across tasks.
-- Supports Application Load Balancer (ALB) and Network Load Balancer (NLB).
+  - Integrates with Elastic Load Balancing (ELB) to distribute incoming traffic across tasks.
+  - Supports Application Load Balancer (ALB) and Network Load Balancer (NLB).
 
 </details>
 
 <details>
  <summary> <b> Docker Commands used in this mini project </b> </summary>
+ 
  ```sh
  $ docker build -t <image> .       # build
  $ docker images                   # display build images
