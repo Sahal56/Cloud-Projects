@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Clumsy Bird",
+        "image": "./assets/thumbnails/touch-icon-iphone-retina.png",
+        "description": "Flappy Bird CLone made using MelonJS",
+        "path": "./clumsy-bird/index.html"
+    },
+    {
+        "name": "Snakes & Ladders",
+        "image": "./assets/thumbnails/snakesnladders-thumbnail_1024x640.jpg",
+        "description": "Web Based Snakes & Ladder",
+        "path": "./snakes-and-ladders/index.html"
+    },
+    {
+        "name": "Space Block Invaders",
+        "image": "./assets/thumbnails/space-block-invader-thumbnail.jpg",
+        "description": "PvP AI Shooter Game made using JavaScript",
+        "path": "./space-block-invaders/dist/index.html"
+    },
+    {
+        "name": "Space Huggers",
+        "image": "./assets/thumbnails/space-hugger-thumbnail.jpg",
+        "description": "PvP Shooter Game with levels and achievements",
+        "path": "./SpaceHuggers/index.html"
+    }
+]

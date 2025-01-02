@@ -1,0 +1,158 @@
+* {
+  font-family: 'Cinzel', serif;
+}
+
+body {
+  background-image: url(./images/bg-forest.jpg);
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  color: rgb(34, 34, 34);
+}
+
+header,
+footer {
+  text-align: center;
+  background-color: rgba(245, 245, 220, 0.5);
+  box-shadow: 2px 2px 2px gray;
+}
+
+#drawer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(245, 245, 220, 0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.drawerBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 60px;
+  border: 5px ridge silver;
+  border-radius: 30%;
+  background-color: #f5f5dc;
+  font-size: 30px;
+}
+
+/* disable scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, 70px);
+  grid-template-rows: repeat(10, 70px);
+  border: 15px ridge silver;
+  background-image: url(./images/SnakeLadder.png);
+  /* column-gap: 10px; */
+  /* row-gap: 10px; */
+}
+
+.tile {
+  position: relative;
+  margin: 3px;
+  padding: 5px 5px;
+  font-size: x-small;
+  font-weight: bold;
+  box-sizing: border-box;
+  width: 70px;
+  height: 70px;
+}
+
+.player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px ridge cadetblue;
+  margin: auto;
+  background-color: lightblue;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.ladder-start {
+  background-color: rgba(218, 165, 32, 0.2);
+  border: 10px ridge goldenrod;
+  position: absolute;
+  height: 5px;
+  transform-origin: top left;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.Snake-start {
+  background-color: rgba(165, 42, 42, 0.2);
+  border: 10px ridge darksalmon;
+  position: absolute;
+  height: 5px;
+  transform-origin: top left;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.coords {
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: silver;
+  color: rgb(34, 34, 34);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px px gray;
+  border: none;
+  /* border: solid 2px rgb(34, 34, 34); */
+}
+
+.button:disabled {
+  background-color: lightgray;
+  box-shadow: inset 2px 2px 5px gray;
+}
+
+#dice-results {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.game {
+  margin: auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-lr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
