@@ -64,6 +64,10 @@
  
 </details>
 
+---
+## **Architecture**
+
+![arch-game-ecs](https://github.com/user-attachments/assets/6dae8168-5715-4db8-a5a8-9ab9e7f6a75b)
 
 ---
 ## **Output**
