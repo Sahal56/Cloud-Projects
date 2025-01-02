@@ -18,6 +18,7 @@
 |  2  | [3-Tier Web App](./02-3-tier-web-app) | A Highly Available Web Application based on 3-Tier Architecture with Load Balancing and AutoScaling, implemented with Aurora Multi AZ Database. | Terraform, AWS Virtual Private Cloud (VPC), Application Load Balancer, EC2-ASG, Aurora, S3, (S3 Gateway Endpoint, EC2 Instance Connect Endpoint) |
 |  3  | [Serverless-Image-Thumbnail-Generator](./03-serverless-thumbnail-generator/)   | To generate image thumbnails, whenever any image arrives in S3 bucket. It uses S3 Event Notifications to trigger Lambda function and store thumbnail in Destination Bucket. | Terraform, AWS S3, Lambda, (S3 event notifications, Lambda Layers) |
 |  4  | [CI-CD-Pipeline](./04-modern-ci-cd-pipeline/) | Modern CI-CD Pipeline built for frontend with Unit Tests & containerized backend, incorporates different env like dev & staging and utilises modern features like GitHub Flow and trigger builds.| AWS CodePipeline, CodeBuild, Amazon ECR, App Runer , DynamoDB, (GitHub Flow)|
+|  5  | [docker-app-ecs](./docker-app-ecs) | Web-Based Games: Containerized and Deployed with Auto-Scaling and Load Balancing | AWS Elastic Container Service ECS, ECR, Docker, ALB |
 
 <!--
 ****
