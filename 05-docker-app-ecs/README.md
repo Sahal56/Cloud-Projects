@@ -4,7 +4,7 @@
 - Deployed the containerized games on Amazon Elastic Container Service (ECS), ensuring seamless operation in a cloud-native environment.
 - Implemented auto-scaling and load balancing to handle varying traffic loads efficiently and maintain high availability.
 - Explored blue-green deployment strategies by manually deploying a new updated service, enhancing deployment practices for minimizing downtime and risks.
-- Services : AWS ECS, ECR, ALB, Docker
+- Services : AWS ECS, ECR, ALB, Docker, Nginx
 
 <details>
  <summary> <b> ECS GUIDE</b> </summary>
