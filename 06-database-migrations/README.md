@@ -1,10 +1,29 @@
+# **Database Migration**
+- Migrated MySQL database from EC2 instance to RDS MySQL using AWS Database Migration Service (DMS), ensuring seamless data transfer.
+- Automated database configuration and sample database installation on the source EC2 instance via User Data scripts for improved efficiency.
+- Configured security groups for source and target databases and the replication instance to enforce minimal communication and improve security.
+- Leveraged EC2 Connect to configure and monitor the source database during migration and verified the target database post-migration to ensure a successful transition.
+- Tested and validated User Data scripts locally on Amazon Linux 2, deployed on Hyper-V (Windows), ensuring correctness before deployment.
+- Services : AWS DMS, RDS, EC2, MySQL, Hyper-V
 
 
-- Automate database configuration using scripts for seamless setup and management.
+---
+## **Architecture**
 
 
+---
+## **Prerequisites**
+|   **Service**    | **EC2** | **DMS** | **RDS** |
+|------------------|---------|---------|---------|
+| Free Tier Limits | <img width="270" alt="prequisite-ec2" src="https://github.com/user-attachments/assets/b49faa47-6bc9-464b-9438-a123b5decc0d" /> | <img width="293" alt="aws-dms" src="https://github.com/user-attachments/assets/125571f9-406f-4a43-8e5e-5eb511625b2c" /> | <img width="266" alt="prequisite-rds" src="https://github.com/user-attachments/assets/92876c17-402c-43ac-a7e9-8e817511cf80" /> |
+
+---
+## **Referrences/Links**
+- Amazon Linux 2 on Prem / Locally | [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html) | [IMAGE-VM-LINK](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
+- Offical Migration Guide | [LINK](https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/)
 
 
+<!--
 testing
 ```sh
 curl https://gitlab.com/sahal56/scripts/-/raw/main/ec2_user_data/amazon_linux_2_install_mysql8_sakila_db.sh -o script.sh
@@ -81,6 +100,7 @@ LINK : https://docs.aws.amazon.com/general/latest/gr/ec2-instance-connect.html
 
 
 <!-- notes -->
+<!--
 Database Migration Project
 
 
@@ -193,6 +213,7 @@ https://medium.com/@mudasirhaji/step-by-step-guide-on-how-to-install-mysql-8-ser
 
 
 <!-- continue -->
+<!--
 
 migrate existing data and live changes requires MYSQL binary log avaialble at source db
 
@@ -200,10 +221,6 @@ migrate existing data and live changes requires MYSQL binary log avaialble at so
 Target DB SG temp inbound rule | require public IP
 to allow 3305 from 0.0.0.0
 checking from laptop and phone
-
-guide
-https://www.youtube.com/watch?v=MwwqY6-Yzc8
-https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/
 
 
 --- 
@@ -223,3 +240,11 @@ sudo curl https://gitlab.com/sahal56/scripts/-/raw/main/wow/just-run.sh | sh
 
 
    this works in al2
+
+-->
+
+
+---
+## **Acknowledgements**
+- [Amazon Web Services - AWS](https://aws.amazon.com/)
+- [Microsoft Hyper-V](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
