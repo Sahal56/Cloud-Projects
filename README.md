@@ -19,7 +19,7 @@
 |  3  | [Serverless-Image-Thumbnail-Generator](./03-serverless-thumbnail-generator/)   | To generate image thumbnails, whenever any image arrives in S3 bucket. It uses S3 Event Notifications to trigger Lambda function and store thumbnail in Destination Bucket. | Terraform, AWS S3, Lambda, (S3 event notifications, Lambda Layers) |
 |  4  | [CI-CD-Pipeline](./04-modern-ci-cd-pipeline/) | Modern CI-CD Pipeline built for frontend with Unit Tests & containerized backend, incorporates different env like dev & staging and utilises modern features like GitHub Flow and trigger builds.| AWS CodePipeline, CodeBuild, Amazon ECR, App Runer , DynamoDB, (GitHub Flow) |
 |  5  | [Dockerized-Web-Games](./05-docker-app-ecs/) | Game Hub: A web-based gaming platform serving games via Nginx in lightweight containers. Deployed on AWS ECS with autoscaling tasks, it ensures high availability, scalability, and optimal performance | AWS Elastic Container Service, ECR, ALB, Docker, Nginx |
-|  6  | [DB-Migration-MySQL-EC2-RDS-MySQL](./06-database-migrations/) | Database Migration Project v1 from MySQL on EC2 to RDS MySQL using AWS Database Migration Service (DMS) for seamless transition and minimal downtime. Script Automation for DB Configuration| AWS DMS, RDS, EC2 |
+|  6  | [DB-Migration-MySQL-EC2-RDS-MySQL](./06-database-migrations/) | Database Migration Project v1 : MySQL on EC2 to RDS MySQL using AWS Database Migration Service (DMS) for seamless transition and minimal downtime. Script Automation for DB Configuration using EC2 User Data | AWS DMS, RDS, EC2 |
 
 <!--
 ****
