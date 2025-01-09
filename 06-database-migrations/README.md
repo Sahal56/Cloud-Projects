@@ -12,15 +12,29 @@
 
 
 ---
+## **Output**
+
+
+---
 ## **Prerequisites**
+- This Project is eligible for free tier
+- One should use resource wisely and after performing necessary Migration Planning assessment
+- This is Project V1 is Homogeneous Migration i.e. Source and Target DB are same (MySQL)
+
 |   **Service**    | **EC2** | **DMS** | **RDS** |
 |------------------|---------|---------|---------|
 | Free Tier Limits | <img width="270" alt="prequisite-ec2" src="https://github.com/user-attachments/assets/b49faa47-6bc9-464b-9438-a123b5decc0d" /> | <img width="293" alt="aws-dms" src="https://github.com/user-attachments/assets/125571f9-406f-4a43-8e5e-5eb511625b2c" /> | <img width="266" alt="prequisite-rds" src="https://github.com/user-attachments/assets/92876c17-402c-43ac-a7e9-8e817511cf80" /> |
 
 ---
-## **Referrences/Links**
+## **Referrences**
 - Amazon Linux 2 on Prem / Locally | [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html) | [IMAGE-VM-LINK](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - Offical Migration Guide | [LINK](https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/)
+
+---
+## **Explanation**
+
+1.
+
 
 
 <!--
