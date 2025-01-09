@@ -29,11 +29,16 @@
 ## **Referrences**
 - Amazon Linux 2 on Prem / Locally | [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html) | [IMAGE-VM-LINK](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - Offical Migration Guide | [LINK](https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/)
-
+- Sample MySQL **Sakila** Database | [LINK](https://dev.mysql.com/doc/sakila/en/sakila-installation.html)
 ---
 ## **Explanation**
 
-1.
+1. EC2 User Data Script **(Automation)**
+    - ☑ install mysql 8 server and client
+    - ☑ configure 1st installation and root password
+    - ☑ add new user with all privileges
+    - ☑ download & instal sakila db
+
 
 
 
@@ -46,11 +51,6 @@ chmod +x script.sh
 ```
 
 ---
-automation:
-  ☑ install mysql 8 server and client
-  ☑ configure 1st installation and root password
-  ☑ add new user with all privileges
-  ☑ download & instal sakila db
 
 
 --- 
