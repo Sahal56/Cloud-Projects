@@ -1,5 +1,5 @@
 #!/bin/bash
-# This scritp is intended for amazon linux 2
+# This script is intended for amazon linux 2
 # Note: ec2 user data run as root(sudo). so not required to specify explicitly.
 
 # Update the system
