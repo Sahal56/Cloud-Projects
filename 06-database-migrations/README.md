@@ -30,7 +30,130 @@
 - Amazon Linux 2 on Prem / Locally | [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html) | [IMAGE-VM-LINK](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - Offical Migration Guide | [LINK](https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/)
 - Sample MySQL **Sakila** Database | [LINK](https://dev.mysql.com/doc/sakila/en/sakila-installation.html)
+- Amazon EC2 Instance Connect endpoints regionwise| [LINK](https://docs.aws.amazon.com/general/latest/gr/ec2-instance-connect.html)
+    - `ap-south-1` : `ec2-instance-connect.ap-south-1.amazonaws.com`
 
+
+---
+## **Credentials/Script**
+
+<details>
+
+<summary>
+<b> 1. Database Credentials </b>
+</summary>
+
+```txt
+(after)
+ROOT_PASSWORD="rootPassword#0"
+
+ADMIN_USER="admin"
+ADMIN_PASSWORD="adminPassword#1"
+```
+
+</details>
+
+
+<details>
+
+<summary>
+<b> 2. EC2 User Data (for Amazon Linux 2)</b>
+</summary>
+
+```sh
+#!/bin/bash
+# This script is intended for amazon linux 2
+# Note: ec2 user data run as root(sudo). so not required to specify explicitly.
+
+# Update the system
+yum update -y
+# amazon-linux-extras is already installed in system
+amazon-linux-extras install epel -y
+
+# Getting rpm package from MySQL
+RPM_PKG_NAME="mysql80-community-release-el7-5.noarch.rpm"
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022 # gpg key | year 2022
+curl https://dev.mysql.com/$RPM_PKG_NAME -o $RPM_PKG_NAME
+rpm -i $RPM_PKG_NAME # -ivh : verbose,hash
+
+# Install MySQL server and client
+yum install mysql-community-client mysql-community-server -y
+
+# Start and enable MySQL service
+systemctl enable mysqld
+systemctl start mysqld
+
+sleep 5
+
+# Set root password and secure MySQL installation
+TEMP_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
+ROOT_PASSWORD="rootPassword#0"
+
+mysql --connect-expired-password -u root -p"$TEMP_PASSWORD" <<EOF
+ALTER USER 'root'@'localhost' IDENTIFIED BY '${ROOT_PASSWORD}';
+UNINSTALL COMPONENT "file://component_validate_password";
+DELETE FROM mysql.user WHERE User='';
+DROP DATABASE IF EXISTS test;
+DELETE FROM mysql.db WHERE Db='test'
+FLUSH PRIVILEGES;
+EOF
+
+# explanation of above :
+#   - change root password
+#   - remove password policy
+#   - remove anonymous users
+#   - remove test database
+#   - remove privileges on test database
+
+# Updating MySQL configuration to allow remote connections and enabling binary logging for replication
+echo -e "\nbind-address=0.0.0.0\n\nlog_bin=mysql-bin\nserver-id=1\nbinlog_format=ROW\n" >> /etc/my.cnf
+
+# Restart MySQL to apply configuration changes
+systemctl restart mysqld
+
+# sleep 2
+
+ADMIN_USER="admin"
+ADMIN_PASSWORD="adminPassword#1"
+
+# Create a new admin user with remote access (% - from any ip)
+mysql -u root -p"${ROOT_PASSWORD}" <<EOF
+CREATE USER '${ADMIN_USER}'@'%' IDENTIFIED BY '${ADMIN_PASSWORD}';
+GRANT ALL PRIVILEGES ON *.* TO '${ADMIN_USER}'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EOF
+
+# Download and import the sample Sakila database
+USER_HOME_DIR="/home/ec2-user"
+curl "https://downloads.mysql.com/docs/sakila-db.zip" -o "${USER_HOME_DIR}/sakila-db.zip"
+unzip $USER_HOME_DIR/sakila-db.zip
+mysql -u "${ADMIN_USER}" -p"${ADMIN_PASSWORD}" -e "SOURCE ${USER_HOME_DIR}/sakila-db/sakila-schema.sql"
+mysql -u "${ADMIN_USER}" -p"${ADMIN_PASSWORD}" -e "SOURCE ${USER_HOME_DIR}/sakila-db/sakila-data.sql"
+
+# Completion
+echo "MySQL installation, configuration, user creation, and Sakila database import completed."
+
+
+# Testing
+#   rpm -qa | grep "mysql" # list all rpm packages and filter mysql
+#   rpm -K mysql80-community-release-el7-5.noarch.rpm # verify package
+#   rpm -qa gpg-pubkey # list all installed gpg pub keys
+
+```
+
+</details>
+
+
+<details>
+
+<summary>
+<b> 3. Amazon Linux 2 in Hyper-V (Locally) </b>
+</summary>
+
+Please Open in new tab
+> Check this project in [amazon-linux-2-hyper-v](../amazon-linux-2-hyper-v/)
+
+</details>
 
 ---
 ## **Explanation**
@@ -47,7 +170,7 @@
         - Replication SG : Allow from Replication SG on `3306`, Source SG on `all ports`
         - Target DB SG : Allow from Replication SG on `3306`, Source SG on `all ports`
         - NOTE: The reason we have allowed traffic on all ports in Replication & Target DB SG from Source DB SG, so that in case of  troubleshooting, we can easily connect to them via Private IP as we have connected to only Source EC2 Instance(public IP) via EC2 Connect Endpoint
-4. EC2 User Data Script **(Automation)**
+4. EC2 User Data Script **(Automation)** 
     - ☑ install mysql 8 server and client
     - ☑ configure 1st installation and root password
     - ☑ add new user with all privileges
@@ -65,7 +188,7 @@
     - MySQL DB should have allow access : one can configure in `/etc/my.conf`
         - `bind-address` : 0.0.0.0 | to allow connection from any ip
         - binary logging should be enabled: To use replication capabilities by DMS.
-        - Dont worry, I have covered that part in User data script. It will automatically add this entries in /etc/my.conf file
+        - Dont worry, I have covered that part in User data script given above. It will automatically add this entries in /etc/my.conf file
 1. Create & Configure Security Groups for each. you can create & use privat subnet for RDS & Replication Instance.
 2. Create Source MySQL Database:
     - Launch EC2 instance with public IP
@@ -75,228 +198,25 @@
 4. Configure DMS Service :
     1. Create Replication Instance : In same AZ. You will get frustrated as it takes so much time to be able to usable. You can perform this step in 1st place, which will save you a lot of time, but in ideal scenario source and target database are available before migration.
     2. Create Source & Target Endpoints
-    3. Create Migration Task:
-
-
-1. Prequisite :
-
-
-
-
-<!--
-testing
-```sh
-curl https://gitlab.com/sahal56/scripts/-/raw/main/ec2_user_data/amazon_linux_2_install_mysql8_sakila_db.sh -o script.sh
-chmod +x script.sh
-./script.sh
-```
-
----
-
-
---- 
-## **AL2 VM in Hyper V | Outside AWS**
-use default seed.iso
-user > ec2-user
-password > amazon
-
-utilities
-  > ip address : ipconfig 
-  > GUI file manager & text editor : sudo mc
-  
-
-
-connecting to EC2 VM from our laptop
-  configure
-    > sudo nano /etc/ssh/sshd_config
-      > change some settings
-      > PasswordAuthentication no => yes
-      > ChallengeResponseAuthentication no => yes
-    > sudo service sshd restart
-ssh ec2-user@<ip>
-
-
-
----
-Tested on Amazon Linux 2023
-
-
-```sh
-open -t "/opt/homebrew/etc/my.cnf"
-
-# allow firewall
-sudo ufw allow 3306
-```
-
-
-```sql
--- This script is to calculate size of your database
-SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
-
-
-
--- Althogh, binary logging is enabled by default on MSQL version 8 and above. It is good thing to confirm for performing migrate and replicate live transaction using AWS DMS.
--- To display MySQL logs
-show binary logs;
--- to check location of log storage
-show variables like '%log_bin%';
-```
-
-## Download Links
-### Sample Database
-- MySQL Sakira DB [LINK](https://dev.mysql.com/doc/sakila/en/sakila-installation.html) | [DOWNLOAD](https://downloads.mysql.com/docs/sakila-db.zip)
-
-
-
-we are using Amazon EC2 Instance Connect endpoints for connecting to EC2instance where our Source MySQL DB is hosted
-for ap-south-1 : `ec2-instance-connect.ap-south-1.amazonaws.com`
-LINK : https://docs.aws.amazon.com/general/latest/gr/ec2-instance-connect.html
-
-
-
-<!-- notes -->
-<!--
-Database Migration Project
-
-
-
-TASKS
-
-install mysql on ec2
-add data in into db
-
-SG
-1. Source_DB_SG
-2. Replication SG
-3. Target_DB_SG
-
-Availability zone : ap-south-1a
-default nacl
-
-
-mod
-s_sg : inbound 0.0.0.0 3306
-t_sg : inbound 0.0.0.0 3306
-
-for testing
-
-
-source : mysql
-target : postgresql
-
-
-
-
-—
-troubleshooting
-mysql conf path in homebrew : /opt/homebrew/etc/my.cnf
-mysql Allow Remote Access : https://medium.com/@haydane/how-to-install-mysql-on-mac-and-allow-remote-access-b6c730aba09b
-
-brew services restart mysql
-brew services stop mysql
-
-
-—
-
-STEPS
-
-Install MySQL in EC2
-Allow remote connection by creating remote user, modifying conf file, configuring fire wall (test)
-
-
-
-commands
-
-
-terminal
-— MySQL configuration file: 
-sudo nano /etc/my.cnf # Amazon Linux
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf # Ubuntu
-
-change to
-bind-address = 0.0.0.0
-
-restart
-sudo systemctl restart mysqld # Amazon Linux
-sudo systemctl restart mysql # Ubuntu
-
-— allow any ip
-bind-address = 0.0.0.0
-
-
-sql
-create user 'remoteuser'@'%' identified by 'remotePassword#1';
-GRANT ALL PRIVILEGES ON *.* TO '<remoteuser>'@'%' WITH GRANT OPTION;
-flush privileges;
-— @'%' allows access from any IP address.
-
-> select user from mysql.user;
-
-test remote connection
-mysql -u remoteuser -h <hostname/ip> -p
-remotePassword#1
-
-
-
-
-
-require 3 things
-
-replication instances
-endpoints
-db migration tasks
-
-but we can’t create in any order
-For migration tasks, we require replication server
-For endpoints, for testing endpoints, we need at least one replication server
-
-so rep inst > endpoint > tasks
-
-
-rep insta : contain data of source db, it will transfer it to target db
-
-simple rds => rds | https://www.youtube.com/watch?v=01TBKMvAw0A
-
-
-https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/
-
-
-mysql in ec2 : https://muleif.medium.com/how-to-install-mysql-on-amazon-linux-2023-5d39afa5bf11
-https://medium.com/@mudasirhaji/step-by-step-guide-on-how-to-install-mysql-8-server-on-aws-ec2linux-2-in-2024-72f3f14764b6
-
-
-
-
-<!-- continue -->
-<!--
-
-migrate existing data and live changes requires MYSQL binary log avaialble at source db
-
-
-Target DB SG temp inbound rule | require public IP
-to allow 3305 from 0.0.0.0
-checking from laptop and phone
-
-
---- 
-last continue
-sudo curl https://gitlab.com/sahal56/scripts/-/raw/main/wow/just-run.sh | sh
-   
-   
-   
-   
-   source DB DNS: ec2-3-110-170-235.ap-south-1.compute.amazonaws.com
-   ip: 3.110.170.235
-   
-   
-   
-   target dns: target-mysql-db.cf2aay2kcad1.ap-south-1.rds.amazonaws.com
-   
-
-
-   this works in al2
-
--->
+    3. Create DB Migration Task:
+5. Post Migration :
+    - Verify Target Database : As we have alread connected to source EC2 instance via Connect Endpoint. use mysql cli with target db endpoint identifer to connect and verify the databases and tables are migrated properly
+    - The commands are :
+      ```sh
+      $ mysql -u admin -p"adminPassword#1 "-h <rds-mysql-endpoint>
+      mysql > show databases;
+      mysql > use sakila;
+      mysql > show tables;
+      mysql > -- This script is to calculate size of your database
+      mysql > SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
+      ...(any query you want)
+      ```
+6. Clean Up : one should clean up all resources which are note required. Delete resources one by one (maintain this order)
+    - Migration Task > Endpoints(Source & Target) > Replication Instance
+    - RDS Target Database > Delete | (take snapshot if required)
+    - Source EC2 Instance > Terminate | (Create AMI if u need in some project)
+    - `Non-Default` VPC, Subnets, Security Groups, etc : if you have created
+    - IAM Roles : Ideally you should remove any non-requried resource. But My Suggestion is not delete the 2 roles, as in future we might need for DB Migration. So keep them
 
 
 ---
