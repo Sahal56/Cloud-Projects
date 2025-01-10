@@ -30,14 +30,55 @@
 - Amazon Linux 2 on Prem / Locally | [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html) | [IMAGE-VM-LINK](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - Offical Migration Guide | [LINK](https://aws.amazon.com/tutorials/move-to-managed/migrate-my-sql-to-amazon-rds/)
 - Sample MySQL **Sakila** Database | [LINK](https://dev.mysql.com/doc/sakila/en/sakila-installation.html)
+
+
 ---
 ## **Explanation**
-
-1. EC2 User Data Script **(Automation)**
+1. I have performed Homogeneous Migration, means both database engine are similar. In future, I will include Project v2 og heterogeneous Migration, utlizing AWS Schema conversion tool.
+2. Instances used are (eligible for free tier)
+    - Source DB on EC2: `t2.micro`
+    - Replication Instance : `dms.t2.micro`
+    - Target RDS DB : `db.t4g.micro`
+3. Networking & Security : Only EC2 instance, which source Source DB has public IP connectivity. Additionaly Connection was made using EC2 connect endpoint removing the need of public/private keys to SSH into instance.
+    - Region - AZ : `ap-south-1a` for all resources (to avoid inter-az charges)
+    - VPC, Subnet, NACL : `default`
+    - Security Groups :
+        - Source DB SG : Allow from Replication SG, Target SG on port: `3306`, EC2 Connect Endpoint on `22`
+        - Replication SG : Allow from Replication SG on `3306`, Source SG on `all ports`
+        - Target DB SG : Allow from Replication SG on `3306`, Source SG on `all ports`
+        - NOTE: The reason we have allowed traffic on all ports in Replication & Target DB SG from Source DB SG, so that in case of  troubleshooting, we can easily connect to them via Private IP as we have connected to only Source EC2 Instance(public IP) via EC2 Connect Endpoint
+4. EC2 User Data Script **(Automation)**
     - ☑ install mysql 8 server and client
     - ☑ configure 1st installation and root password
     - ☑ add new user with all privileges
     - ☑ download & instal sakila db
+
+
+### **Steps : (To perform)**
+0. Prequisite :
+    - AWS Free Tier account (750 hours/month compute)
+    - DMS : In order to use DMS, we have to create IAM roles to allow DMS to call AWS services/action on our behalf. The list is:
+      | NO. | ROLE | POLICY | DESCRIPTION |
+      |-----|------|--------|-------------|
+      |  1  | `dms-vpc-role ` | `AmazonDMSVPCManagementRole` | A role that allows you to manage Amazon VPC |
+      |  2  | `dms-cloudwatch-logs-role`  | `AmazonDMSCloudWatchLogsRole` | A role that allows you to publish logs to CloudWatch Logs |
+    - MySQL DB should have allow access : one can configure in `/etc/my.conf`
+        - `bind-address` : 0.0.0.0 | to allow connection from any ip
+        - binary logging should be enabled: To use replication capabilities by DMS.
+        - Dont worry, I have covered that part in User data script. It will automatically add this entries in /etc/my.conf file
+1. Create & Configure Security Groups for each. you can create & use privat subnet for RDS & Replication Instance.
+2. Create Source MySQL Database:
+    - Launch EC2 instance with public IP
+    - Use User Data Script given below to download provison and install sample database with all necessary requirement to be eligible for Migration.
+    - Connect it using EC2 Connect Endpoint at AWS Management Consoleand verify if database, users and conf file are proper.
+3. Create MySQL Database in RDS : use instance type of free tier with same credentials that are used in Source Database for simplicity
+4. Configure DMS Service :
+    1. Create Replication Instance : In same AZ. You will get frustrated as it takes so much time to be able to usable. You can perform this step in 1st place, which will save you a lot of time, but in ideal scenario source and target database are available before migration.
+    2. Create Source & Target Endpoints
+    3. Create Migration Task:
+
+
+1. Prequisite :
 
 
 
