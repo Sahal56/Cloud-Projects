@@ -1,6 +1,6 @@
 # **Amazon Linux 2 VM in Hyper V | Outside AWS**
 
-- [GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html)
+- [OFFICIAL GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html)
 - [VM-IMAGES](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - use default seed.iso
 
@@ -40,8 +40,12 @@ $ ipconfig
 # password is given above in Credentials
 $ ssh ec2-user@<VM-ip>
   > give password
+
+Enjoy !!!
 ```
+
+---
 utilities
-  > ip address : ipconfig 
-  > GUI file manager & text editor : sudo mc
+- ip address : ipconfig 
+- GUI file manager & text editor : sudo mc
   
