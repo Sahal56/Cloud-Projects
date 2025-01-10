@@ -19,6 +19,49 @@
 ---
 ## **Output**
 
+| **Target Database** |
+|---------------------|
+| **As you can see below, `sakila db` is fully migrated**|
+| Admin > EC2 Connect > Source EC2 Server == mysql cli ==3306==> RDS MySQL |
+| <img width="1036" alt="proj-6-db-migrate-op-4-result" src="https://github.com/user-attachments/assets/db80b1af-f57a-4d11-bcee-6c7894864394" /> |
+
+<details>
+
+<summary>
+<b> Expand to see all SS </b>
+</summary>
+
+| **EC2 Source - MySQL** |
+|----------------|
+| ![proj-6-db-migrate-op-1-ec2-src-db-mysql](https://github.com/user-attachments/assets/fbb8a81a-a874-4258-9da3-fe051b53eb9d) |
+| `my.conf` file to enabled remote login and binary logging for replication|
+| <img width="878" alt="proj-6-db-migrate-op-1b-ec2-src-db-mysql-myconf" src="https://github.com/user-attachments/assets/9d3d8ace-59c1-489b-a278-c010aedde718" /> |
+
+
+| **RDS Target - MySQL** |
+|------------------------|
+| <img width="1414" alt="proj-6-db-migrate-op-2-target-rds-mysql" src="https://github.com/user-attachments/assets/0f5ef1f3-5b72-4e8f-aa36-f3be0b19736a" /> |
+
+
+| **Replication Instance** |
+|--------------------------|
+| <img width="1383" alt="proj-6-db-migrate-op-3a-dms-rep-instance" src="https://github.com/user-attachments/assets/d587a068-9fc7-4acb-81ff-2df2ede36353" /> |
+
+| **DMS Endpoints** |
+|-------------------|
+|<img width="1408" alt="proj-6-db-migrate-op-3b-dms-ep" src="https://github.com/user-attachments/assets/88b010a4-ba3a-40a2-97e8-a0f6f6cb3ff4" /> |
+| <img width="778" alt="proj-6-db-migrate-op-3b-dms-ep1" src="https://github.com/user-attachments/assets/a53774d5-5b2f-45d0-9f35-446d7ec5930e" /> |
+| <img width="1098" alt="proj-6-db-migrate-op-3b-dms-ep2" src="https://github.com/user-attachments/assets/517e46b5-a769-4913-a902-a3b91c96c85a" /> |
+
+| **DMS TASK** |
+|--------------|
+| <img width="788" alt="proj-6-db-migrate-op-3c-dms-taskA" src="https://github.com/user-attachments/assets/d2d443d0-7400-42de-97cc-6bb22d3c6808" /> |
+| <img width="1390" alt="proj-6-db-migrate-op-3c-dms-taskB" src="https://github.com/user-attachments/assets/757c3f6e-d85e-4a1e-8ad7-fd1cf8e3e69d" /> |
+| <img width="1399" alt="proj-6-db-migrate-op-3c-dms-taskC" src="https://github.com/user-attachments/assets/f0d5a878-ff78-4922-a176-1d01c54abf6d" /> |
+| As you can see below : `Total time` = `Created - Stopped` = `1min 45s`  to migrate our `sakila` DB|
+| <img width="1407" alt="proj-6-db-migrate-op-3d-dms-task" src="https://github.com/user-attachments/assets/c07c5131-c35f-4b13-957d-781771d4f20d" /> |
+
+</details>
 
 ---
 ## **Prerequisites**
@@ -194,6 +237,7 @@ Please Open in new tab
         - `bind-address` : 0.0.0.0 | to allow connection from any ip
         - binary logging should be enabled: To use replication capabilities by DMS.
         - Dont worry, I have covered that part in User data script given above. It will automatically add this entries in /etc/my.conf file
+        <img width="878" alt="proj-6-db-migrate-op-1b-ec2-src-db-mysql-myconf" src="https://github.com/user-attachments/assets/9d3d8ace-59c1-489b-a278-c010aedde718" /> 
 1. Create & Configure Security Groups for each. you can create & use privat subnet for RDS & Replication Instance.
 2. Create Source MySQL Database:
     - Launch EC2 instance with public IP
