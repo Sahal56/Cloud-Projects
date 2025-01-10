@@ -6,10 +6,15 @@
 - Tested and validated User Data scripts locally on Amazon Linux 2, deployed on Hyper-V (Windows), ensuring correctness before deployment.
 - Services : AWS DMS, RDS, EC2, MySQL, Hyper-V
 
-
 ---
 ## **Architecture**
+![db-migrate-homogeneous](https://github.com/user-attachments/assets/e24d6419-0790-4ff5-ab49-300637823f1f)
 
+**Terms**
+- `Souce Endpoint` : It has connectivity details used by Replication Instance to connect to source database from where data is to be migrated
+- `Target Endpoint` : It has connectivity details used by Replication Instance to connect to target database, where data is to be moved
+- `DMS Replication Task` : The task/job defining what is to be migrated(which schema/database) and other migration related properties
+- `DMS IAM Roles` : The IAM Roles which allow the DMS service to call AWS services on our behalf. i.e. administer the VPC, publish logs in CloudWatch
 
 ---
 ## **Output**
