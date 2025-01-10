@@ -29,9 +29,10 @@
 ### **Other Hands on Projects**
 | **No.** | **Name** |     **Description**    |
 |---------|----------|------------------------|
-| 1   | [aws-pricing-calculator](./aws-pricing-calculator/)   |  To Estimate the cost of 10 EC2 instances with Savings Plan for 3 years with Partial Upfront Payment       |
-| 2   | [alb-asg-ap-south-1](./alb-asg-ap-south-1/)   |  Experimenting Load Balancing with Auto Scaling in Multi AZ environment       |
-| 3   | [AWS-SIMULEARN](./AWS-SIMULEARN/)   |  It is Game-based learning, fixing 👨🏻‍🔧 and configuring AWS services to complete Tasks 💯    |
+|    1    | [aws-pricing-calculator](./aws-pricing-calculator/) |  To Estimate the cost of 10 EC2 instances with Savings Plan for 3 years with Partial Upfront Payment |
+|    2    | [alb-asg-ap-south-1](./alb-asg-ap-south-1/) |  Experimenting Load Balancing with Auto Scaling in Multi AZ environment |
+|    3    | [AWS-SIMULEARN](./AWS-SIMULEARN/) |  It is Game-based learning, fixing 👨🏻‍🔧 and configuring AWS services to complete Tasks 💯 |
+|    4    | [amazon-linux-2-hyper-v](./amazon-linux-2-hyper-v/) | To Setup & Run Amazon 2 Locally on Hyper-V in Windows |
 
 
 ---
