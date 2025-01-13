@@ -2,8 +2,8 @@
 - Architected & Deployed 3-Tier Web Application in AWS with Multi AZ support (3 Availability Zones).
 - Utilized Load Balancing & Auto Scaling for both Web-tier & App-Tier for High Availability & Fault Tolerance.
 - Secured the Infrastructure with help of Security Groups and isolated Subnets.
-- Achived significant cost cut & simplified configuration management by utilizing **S3 Gateway Endpoint**, **EC2 Instance Connect Endpoint**.
-- Implemented automatic infrastructure & services provising and maintenance using **Terraform (IaC)**.
+- Achieved significant cost cut & simplified configuration management by utilizing **S3 Gateway Endpoint**, **EC2 Instance Connect Endpoint**.
+- Implemented automatic infrastructure & services provisioning and maintenance using **Terraform (IaC)**.
 - Tested manual failover of Aurora Multi-AZ database to standby instance using the AWS Management Console to ensure high availability and disaster recovery.
 - Monitored the status of both Web & App Tier's Instances using **CloudWatch Alarms** to ensure optimal resource utilization and performance.
 
