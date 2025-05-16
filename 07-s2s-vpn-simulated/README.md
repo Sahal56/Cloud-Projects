@@ -11,12 +11,66 @@
 ---
 ## **Output**
 
+| `SSH into Libreswan EC2 Instance` |
+|-----------------------------------|
+| <img width="787" alt="Image" src="https://github.com/user-attachments/assets/f8f0ae58-760d-467d-b6c9-fa2d23d171e3" /> |
+
+| **Path** | **Validating IPSec Connectivity using `ping`** |
+|-------------------|-------------------------|
+| **`On Prem => AWS`** | <img width="664" alt="Image" src="https://github.com/user-attachments/assets/7c6ea417-de29-4feb-971f-a417d36b476c" /> |
+| **`AWS =>  On Prem`** | <img width="643" alt="Image" src="https://github.com/user-attachments/assets/a9c0af77-a701-45cb-8d26-b5a865b4761f" /> |
+
+| `Terraform Output` |
+|-----------------------------------|
+| <img width="874" alt="Image" src="https://github.com/user-attachments/assets/014895de-6493-4f5b-85ca-388c7244a6c7" /> |
 
 <details>
+<!-- root expand -->
+  
+ <summary>
+ <b> Expand to see all SS </b>
+ </summary>
 
-<summary>
-<b> Expand to see all SS </b>
-</summary>
+ <br>
+
+| No.| Libreswan| AWS Instance |
+|----|-------|-----------------|
+| `ifconfig` | <img width="665" alt="Image" src="https://github.com/user-attachments/assets/6c3668ef-0c5e-43fc-9b62-60af8de15bf3" /> | <img width="645" alt="Image" src="https://github.com/user-attachments/assets/88b1aa48-7400-4b1f-b499-0d3bad6b7d39" /> |
+| `ping` | <img width="664" alt="Image" src="https://github.com/user-attachments/assets/7c6ea417-de29-4feb-971f-a417d36b476c" /> | <img width="643" alt="Image" src="https://github.com/user-attachments/assets/a9c0af77-a701-45cb-8d26-b5a865b4761f" /> |
+
+<details>
+<!-- 1st level expand -->
+  <summary>
+    <b> 1. VPC </b>
+  </summary>
+<!-- 1st level expand -->
+</details>
+
+<details>
+<!-- 1st level expand -->
+  <summary>
+    <b> 2. S2S </b>
+  </summary>
+<!-- 1st level expand -->
+</details>
+
+<details>
+<!-- 1st level expand -->
+  <summary>
+    <b> 3. EC2 </b>
+  </summary>
+<!-- 1st level expand -->
+</details>
+
+<details>
+<!-- 1st level expand -->
+  <summary>
+    <b> X. Delete Resources </b>
+  </summary>
+<!-- 1st level expand -->
+</details>
+
+<!-- root expand -->
 </details>
 
 ## **Implementation**
