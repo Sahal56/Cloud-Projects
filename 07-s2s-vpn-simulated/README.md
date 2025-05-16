@@ -21,9 +21,14 @@
 | **`AWS =>  On Prem`** | <img width="643" alt="Image" src="https://github.com/user-attachments/assets/a9c0af77-a701-45cb-8d26-b5a865b4761f" /> |
 
 | `Terraform Output` |
-|-----------------------------------|
+|--------------------|
 | <img width="874" alt="Image" src="https://github.com/user-attachments/assets/014895de-6493-4f5b-85ca-388c7244a6c7" /> |
 
+| `IPSec Tunnels` |
+|-----------------|
+| <img width="826" alt="Image" src="https://github.com/user-attachments/assets/7bfd981b-e13a-4864-bdfd-c31d976ae47d" /> |
+
+> Note: Above SS is of 2nd Iteration with 2 tunnels configured in Cloud init.
 <details>
 <!-- root expand -->
   
@@ -33,7 +38,7 @@
 
  <br>
 
-| No.| Libreswan| AWS Instance |
+| `$ command`| Libreswan| AWS Instance |
 |----|-------|-----------------|
 | `ifconfig` | <img width="665" alt="Image" src="https://github.com/user-attachments/assets/6c3668ef-0c5e-43fc-9b62-60af8de15bf3" /> | <img width="645" alt="Image" src="https://github.com/user-attachments/assets/88b1aa48-7400-4b1f-b499-0d3bad6b7d39" /> |
 | `ping` | <img width="664" alt="Image" src="https://github.com/user-attachments/assets/7c6ea417-de29-4feb-971f-a417d36b476c" /> | <img width="643" alt="Image" src="https://github.com/user-attachments/assets/a9c0af77-a701-45cb-8d26-b5a865b4761f" /> |
@@ -41,21 +46,33 @@
 <details>
 <!-- 1st level expand -->
   <summary>
-    <b> 1. VPC </b>
+    <b> 1. VPC - Subnets, Route Tables, Security Groups </b>
   </summary>
 
-|           ⚙️           | VPC |
-|------------------------|-----|
-| `VPCs`                 | <img width="1420" alt="Image" src="https://github.com/user-attachments/assets/94d3e9ab-cc80-4b3a-aefe-44dbcecd8d37" /> |
-| `On Prem VPC`          | <img width="1490" alt="Image" src="https://github.com/user-attachments/assets/aae737be-f2dc-4c24-b07e-27644cf1357e" /> |
-| `AWS VPC`              | <img width="1490" alt="Image" src="https://github.com/user-attachments/assets/6b8d01ec-09dc-40da-a1ba-e1ef3f2b5244" /> |
-| `Security Groups`      | <img width="1415" alt="Image" src="https://github.com/user-attachments/assets/267d90bb-4c00-430d-89cc-947913e9b2c3" /> |
-| `On Prem SG Inbound`   | <img width="1422" alt="Image" src="https://github.com/user-attachments/assets/4467c55d-08dc-4539-b630-68c715073e8c" /> |
-| `AWS SG Inbound`       | <img width="1393" alt="Image" src="https://github.com/user-attachments/assets/69aec8b6-4233-4873-ad6a-389fa61caa93" /> |
-| `Subnets`              | <img width="1425" alt="Image" src="https://github.com/user-attachments/assets/22094add-d22f-455f-ba24-e125b6812c4e" /> |
+|                  ⚙️                 | VPC |
+|-------------------------------------|-----|
+| `VPCs`                              | <img width="1420" alt="Image" src="https://github.com/user-attachments/assets/94d3e9ab-cc80-4b3a-aefe-44dbcecd8d37" /> |
+| `On Prem VPC`                       | <img width="1490" alt="Image" src="https://github.com/user-attachments/assets/aae737be-f2dc-4c24-b07e-27644cf1357e" /> |
+| `AWS VPC`                           | <img width="1490" alt="Image" src="https://github.com/user-attachments/assets/6b8d01ec-09dc-40da-a1ba-e1ef3f2b5244" /> |
 
+|                  ⚙️                 | Subnets |
+|-------------------------------------|---------|
+| `Subnets`                           | <img width="1425" alt="Image" src="https://github.com/user-attachments/assets/22094add-d22f-455f-ba24-e125b6812c4e" /> |
+| `On Prem Public Subnet`             | <img width="1396" alt="Image" src="https://github.com/user-attachments/assets/e1a46306-69dd-444c-b268-87af496321c9" /> |
+| `AWS Public Subnet`                 | <img width="1417" alt="Image" src="https://github.com/user-attachments/assets/07f7e8a3-ab05-4b44-a119-958cae07c326" /> |
 
+|                  ⚙️                 | Security Groups |
+|-------------------------------------|-----------------|
+| `Security Groups`                   | <img width="1415" alt="Image" src="https://github.com/user-attachments/assets/267d90bb-4c00-430d-89cc-947913e9b2c3" /> |
+| `On Prem SG Inbound`                | <img width="1422" alt="Image" src="https://github.com/user-attachments/assets/4467c55d-08dc-4539-b630-68c715073e8c" /> |
+| `AWS SG Inbound`                    | <img width="1393" alt="Image" src="https://github.com/user-attachments/assets/69aec8b6-4233-4873-ad6a-389fa61caa93" /> |
 
+|                  ⚙️                 | Route Tables |
+|-------------------------------------|--------------|
+| `Route Tables & On Prem RT `        | <img width="1424" alt="Image" src="https://github.com/user-attachments/assets/b9bbbc9f-611b-46f5-bb95-26bb1c976d99" /> |
+| `AWS Public RT`                     | <img width="1411" alt="Image" src="https://github.com/user-attachments/assets/1c6fa9b6-adae-476d-b416-d36ad188b9d4" /> |
+| `AWS Private RT`                    | <img width="1408" alt="Image" src="https://github.com/user-attachments/assets/bbfe28f3-383a-4bd6-b864-a5633f36b53f" /> |
+| `AWS Public Route Propagation`      | <img width="1406" alt="Image" src="https://github.com/user-attachments/assets/d06ceac9-cda2-453d-94bc-0088073a3b84" /> |
 
 <!-- 1st level expand -->
 </details>
@@ -132,7 +149,6 @@
 ### **Commands**
 ```sh
 terraform init
-terraform init -upgrade
 terraform plan
 terraform apply -auto-approve
 terraform destroy
