@@ -138,6 +138,9 @@
 |------------|-----|-----------|-------------|----------|
 | `Free Tier Limits / Costs`| <img width="663" alt="Image" src="https://github.com/user-attachments/assets/cc6d058a-43f9-47ec-9cf4-e39019ed89a2" /> | <img width="270" alt="Image" src="https://github.com/user-attachments/assets/c4923681-8eb3-4d9e-a70f-767182dcdb42" /> | <img width="335" alt="Image" src="https://github.com/user-attachments/assets/f6e3053b-1d36-4de4-bc87-870311b4f8dd" /> | <img width="870" alt="Image" src="https://github.com/user-attachments/assets/c9fc736b-a99b-4ad0-872e-fae3d4d28491" /> |
 
+OS : `Amazon Linux 2023 x64`
+Software : `Libreswan 4.12`
+
 > Note : 
 > 1. This project comprises costs. In my case, I got around `$0.06` for 1-2 hours.
 > 2. Whichever OS you wish to use, confirm the software is available (Libreswan/Openswan/Ciso....), ensure latest version and check equivalent Docs for setting up Cloud init file.
@@ -149,8 +152,12 @@ terraform init
 terraform plan
 terraform apply -auto-approve
 terraform destroy
-```
 
+sudo systemctl enable ipsec
+sudo systemctl stop ipse
+sudo systemctl restart ipsec
+ipsec status
+```
 
 |           Network         | VPC              | Public Subnet    | Private Subnet   |
 |---------------------------|------------------|------------------|------------------|
@@ -162,11 +169,15 @@ terraform destroy
 2. Security Group: It allows all traffic from On Prem, AWS and User Home IP range. (For Personal Project/Testing). In production environment precise traffic control measures should be taken. Also, for S2S VPN Port `500` & `4500 UDP` should be allowed on both Security Group as well Instance Firewall (if setup).
 3. NACL : For sake of simplicity and to avoid any issues, we have allowed all traffic to flow into subnets.
 4. S2S :
-  1. Customer Gateway : Ensure Elastic IP is allocated before proceeding. Create Customer GW with details.
-  2. Create VPN Gateway in `AWS VPC` (not in `On Prem VPC`)
-  3. Create VPN Connection by selecting above created gateways, proceed with defaults. (If you edit make sure you check Cloud init configuration yaml file & ensure it will work). It will take some time to provision.
-5. EC2 : It will automatically download required packages `libreswan` and configure itself by modifying files : `/etc/sysctl.d/50-libreswan.conf`, `/etc/ipsec.d/aws.conf` tunnel configuration fiel & `/etc/ipsec.d/aws.secrets` authentication file. Refer yaml files : [./srcipts](./srcipts) yaml files & [./utilities](./utilities)
-  - Source/Dest check should be disabled at Libreswan to allow forward packets destined to AWS VPC
+    1. Customer Gateway : Ensure Elastic IP is allocated before proceeding. Create Customer GW with details.
+    2. Create VPN Gateway in `AWS VPC` (not in `On Prem VPC`)
+    3. Create VPN Connection by selecting above created gateways, proceed with defaults. (If you edit make sure you check Cloud init configuration yaml file & ensure it will work). It will take some time to provision.
+5. EC2 : ( Refer yaml files : [./srcipts](./srcipts) yaml files & [./utilities](./utilities) )
+    - It will automatically download required packages `libreswan` and configure itself by modifying files :
+      - `/etc/sysctl.d/50-libreswan.conf`
+      - `/etc/ipsec.d/aws.conf` tunnel configuration file
+      - `/etc/ipsec.d/aws.secrets` authentication file
+    - Source/Dest check should be disabled at Libreswan to allow forward packets destined to AWS VPC
 6. Routing : As we have utilize static routing (given explicitly) and route propagationon enabled in `AWS VPC's RT`, routes will be propagted to Route Table when Tunnels are `UP` (connected), from VPN Gateway to each Route Table (propagation enabled ones).
     - Public Subnet/Table has internet connectivity with Internet Gateway as well as local connectivity while Private Subnet/Table has local connectivity only
     - On Prem to AWS : via Elastic Network Interface (ENI) of `Libreswan Instance` i.e. traffic will flow to libreswan and then it will forward through encrypted IPSec Tunnel.
@@ -175,6 +186,10 @@ terraform destroy
 Why Libreswan?
 - We have chosen it instead of other like strongswan & openswan as it more popular now & supported by Amazon Linux 2023 (primary point)
 - It is open source & widely available in no. of Linux Distros
+
+Why Simulated VPC?
+- As i Dont have static public IP (at Home Router), So I have to get Static (Elastic IP) and simulated the environment in th Cloud.
+- If your ISP provides static IP allocation, then you may proceed with that. It would be great to make.
 
 ---
 ## **ACKNOWLEDGEMENTS**
