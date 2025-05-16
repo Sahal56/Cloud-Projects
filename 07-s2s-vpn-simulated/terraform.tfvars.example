@@ -1,0 +1,6 @@
+project_name     = "proj-07-s2s-vpn"
+az_preferrence   = "ap-south-1a"
+cidr_vpc_on_prem = "192.168.0.0/16"
+cidr_vpc_aws     = "10.0.0.0/16"
+instance_type    = "t2.micro"
+key_name         = "" # Your Key Pair Name
