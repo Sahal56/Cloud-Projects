@@ -2,9 +2,12 @@
 # Utilities | For supporting main terraform files
 # -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# Fetch Home IP | Avoid when travelling around offices, bus, home. Explicitly supply in variables if you want consistent setup
+# Fetch Home IP
+#   - Avoid when travelling around offices, bus, home. Explicitly supply in variables if you want consistent setup
+#   - Ensure it is ipv4
 data "http" "home_ip" {
-  url = "https://ifconfig.me/ip"
+  url = "https://checkip.amazonaws.com/"
+  # Available options : https://checkip.amazonaws.com/ | https://ifconfig.me/ip
 }
 
 # Fetch EC2 Instance Connect Prefix ID

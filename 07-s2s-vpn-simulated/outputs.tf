@@ -24,6 +24,7 @@ output "vpc_aws_instance_private_ip" {
 output "home_ip" {
   value       = "${data.http.home_ip.response_body}/32"
   description = "This IP is of Home Network. It will probably given by ISP or of ISP"
+  # Ensure it is ipv4
 }
 
 # output "al2023_arm_image_id" {
