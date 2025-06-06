@@ -2,7 +2,7 @@
 - Migrated MySQL database from EC2 instance to RDS MySQL using AWS Database Migration Service (DMS), ensuring seamless data transfer.
 - Automated database configuration and sample database installation on the source EC2 instance via User Data scripts for improved efficiency.
 - Configured security groups for source and target databases and the replication instance to enforce minimal communication and improve security.
-- Leveraged EC2 Connect to configure and monitor the source database during migration and verified the target database post-migration to ensure a successful transition.
+- Leveraged EC2 Instance Connect to configure and monitor the source database during migration and verified the target database post-migration to ensure a successful transition.
 - Tested and validated User Data scripts locally on Amazon Linux 2, deployed on Hyper-V (Windows), ensuring correctness before deployment.
 - Services : AWS DMS, RDS, EC2, MySQL, Hyper-V
 
