@@ -6,8 +6,8 @@
 - [VM-IMAGES](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - use default `seed.iso`
 
-#### **Steps:**
-
+---
+`Steps:`
 <details>
    <summary> <b> 0. Create External Virtual Switch (optional) </b> </summary>
    
@@ -99,7 +99,7 @@ user > ec2-user
 password > amazon
 ```
 
-## *Connecting to VM from laptop (same or differnt laptop on same network)**
+## **Connecting to VM from laptop (same or differnt laptop on same network)**
 1. Configure VM
 ```sh
 # change settings
