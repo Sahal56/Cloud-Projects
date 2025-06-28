@@ -1,10 +1,12 @@
-# **Amazon Linux 2 VM in Hyper V | Outside AWS**
+<h1 align="center">
+  <b> Amazon Linux 2 VM in Hyper V | Outside AWS </b>
+</h1>
 
 - [OFFICIAL GUIDE](https://docs.aws.amazon.com/linux/al2/ug/amazon-linux-2-virtual-machine.html)
 - [VM-IMAGES](https://cdn.amazonlinux.com/os-images/2.0.20241217.0/)
 - use default `seed.iso`
 
-#### **Steps**
+#### **Steps:**
 
 <details>
    <summary> <b> 0. Create External Virtual Switch (optional) </b> </summary>
@@ -63,7 +65,7 @@
    <summary> <b> 3. SSH into VM </b> </summary>
 
    | `Let's SSH into our VM` |
-   |-------------------------|
+   |:-------------------------:|
    | `1st > make sure VM allows SSH` |
    | ![proj-al2-hyper-v-4b](https://github.com/user-attachments/assets/a8c47728-7a23-4b39-84a6-fac945736b37) |
    | ![proj-al2-hyper-v-4c](https://github.com/user-attachments/assets/0b0ffc8b-edb8-47ae-8adc-b7fa628ded54) |
@@ -84,7 +86,7 @@
    <summary> <b> 4. Turn OFF VM </b> </summary>
 
    | `Make sure you Shut Down` |
-   |-------------------------|
+   |:-------------------------:|
    ![proj-al2-hyper-v-5-turn-off](https://github.com/user-attachments/assets/a26b8112-5d05-43fe-b1ec-31ab41d2cb5b)
 
 </details>
@@ -126,6 +128,6 @@ Enjoy !!!
 
 ---
 utilities
-- ip address : ipconfig 
-- GUI file manager & text editor : sudo mc
+- ip address : `ipconfig` 
+- GUI file manager & text editor : `sudo mc`
   
