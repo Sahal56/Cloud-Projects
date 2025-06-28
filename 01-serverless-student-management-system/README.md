@@ -1,23 +1,30 @@
-# **Serverless Student Management System**
+<h1 align="center">
+  <b> Serverless Student Management System </b>
+</h1>
 
 - A serverless student management system is a cloud-based application that enables the management of student data (CRUD operations) without the need to manage or provision traditional servers, leveraging AWS Serverless services
 - We can add/edit/delete details of Student like name, roll no./id, email, contact number.
 
 - Technologies used : **AWS Amplify, Amazon API Gateway, AWS Lambda, Amazon DynamoDB**.
 
-## **Architecture**
+<h2 align="center">
+  <b> Architecture </b>
+</h2>
+
 ![serverless-crud](https://github.com/user-attachments/assets/fa858e41-ef5e-4bb7-b1b6-8e7655723f8b)
 
 
 # **Prerequisites**
 - This is project eligible for Free tier
 
-|     Service      | DynamoDB | Lambda | API Gateway | Amplify |
-|------------------|----------|--------|-------------|---------|
+|     `Service`      | `DynamoDB` | `Lambda` | `API Gateway` | `Amplify` |
+|--------------------|------------|----------|---------------|-----------|
 | Free Tier Limits | <img width="288" alt="prequisite-1-dynamodb" src="https://github.com/user-attachments/assets/b657e148-3bd7-43f8-9f7b-ccf2ae5d5fbf"> | <img width="284" alt="prequisite-2-lambda" src="https://github.com/user-attachments/assets/9f08e0ff-a061-45d9-9ddf-828a0ef868a9"> | <img width="287" alt="prequisite-3-api-gw" src="https://github.com/user-attachments/assets/beb82c19-c7f4-42e6-a2fc-91738efcba25"> | <img width="292" alt="prequisite-4-amplify" src="https://github.com/user-attachments/assets/48b4a3d5-bfb0-4ac8-b66d-204cf4240b0e"> |
 
 ---
-## **Results**
+<h2 align="center">
+  <b> Results </b>
+</h2>
 
 ### **Video**
 https://github.com/user-attachments/assets/d833c678-395c-4464-b1ed-2e860a45ac49
@@ -25,17 +32,16 @@ https://github.com/user-attachments/assets/d833c678-395c-4464-b1ed-2e860a45ac49
 ### **Screenshots**
 <img width="735" alt="result-serverless-stud" src="https://github.com/user-attachments/assets/c0352012-bb62-4114-8c39-4849a8288451">
 
-#### **Postman Testing**
-
-|     GetAll      | Get |
+#### **Postman API Testing**
+|     `GetAll`      | `Get` |
 |-----------------|-----|
 | <img width="409" alt="postman-1-getall" src="https://github.com/user-attachments/assets/f98b26c7-dd98-47c3-82ce-60504c6f9c9d"> | <img width="518" alt="postman-2-get" src="https://github.com/user-attachments/assets/da656925-88de-4342-a62d-d28d6445543b"> |
 
-| Post |
+| `Post` |
 |------|
 | <img width="778" alt="postman-3-post" src="https://github.com/user-attachments/assets/ec53b493-106c-4e2b-8cae-38cb6a82f20d"> |
 
-| Put | Delete |
+| `Put` | `Delete` |
 |-----|--------|
 | <img width="360" alt="postman-4-put" src="https://github.com/user-attachments/assets/44927463-bcea-47a1-bbd9-4df6cced576f"> | <img width="431" alt="postman-5-delete" src="https://github.com/user-attachments/assets/80265441-f4b5-4362-b16f-0ebc859899aa"> |
 
@@ -104,7 +110,7 @@ https://github.com/user-attachments/assets/d833c678-395c-4464-b1ed-2e860a45ac49
 - [@sahal56](https://www.github.com/sahal56)
 
 
-## **Acknowledgements**
+## **ACKNOWLEDGEMENTS**
 
  - Offical Guide: [AWS DOCS](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-dynamo-db.html)
  - Markdown Tables: [Link](https://www.tablesgenerator.com/markdown_tables)
