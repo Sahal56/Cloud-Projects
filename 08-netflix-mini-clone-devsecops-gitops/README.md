@@ -12,7 +12,64 @@
 
 ---
 ## **Output**
+<img width="1050" alt="Image" src="https://github.com/user-attachments/assets/9906edab-1e3d-4dae-841e-845c626f7fdd" />
 
+<details>
+<!-- 1st level expand -->
+  <summary> <b> Expand to see All SS </b> </summary>
+
+
+
+| **Netflix App - running on Kubernetes Pods** |
+|----------------------------------------------|
+| <img width="1050" alt="Image" src="https://github.com/user-attachments/assets/37fa360a-e0e3-41fb-bc75-b5af9eff3e74" /> |
+| **Media Player** |
+| <img width="1284" alt="Image" src="https://github.com/user-attachments/assets/4c78fb4b-ae84-4cbe-ab77-9fdfd7407c72" /> |
+
+
+<details>
+  <!-- 2nd level expand -->
+  <summary> <b> Jenkins </b> </summary>
+
+|   | **Jenkins Pipelines** |
+|---|-----------------------|
+| `CI Pipeline` | <img width="1641" alt="Image" src="https://github.com/user-attachments/assets/45991b59-a458-4522-a554-9438a5ccc29a" /> |
+| `CD Pipeline` | <img width="1139" alt="Image" src="https://github.com/user-attachments/assets/cd1651bd-7348-4f64-b1da-f770b5d25ac8" /> |
+| `Dashboard` |<img width="1303" alt="Image" src="https://github.com/user-attachments/assets/0a64e144-c294-46a4-b9df-e2596cfa69bb" /> |
+
+  <!-- 2nd level end -->
+</details>
+
+
+<details>
+  <!-- 2nd level expand -->
+  <summary> <b> Alerts </b> </summary>
+
+|   | **Pipeline Alert Notification** |
+|---|-----------------------|
+| `slack` | <img width="1069" alt="Image" src="https://github.com/user-attachments/assets/05f15a1a-f112-4e0d-bcee-c3cac5fc6f34" /> |
+| `email` | <img width="1049" alt="Image" src="https://github.com/user-attachments/assets/6689f8a3-415a-476b-96f6-5c1736e2407a" /> |
+
+  <!-- 2nd level end -->
+</details>
+
+
+<details>
+  <!-- 2nd level expand -->
+  <summary> <b> Grafana Dashboards </b> </summary>
+
+| **Admin** |
+|-----------|
+| <img width="1172" alt="Image" src="https://github.com/user-attachments/assets/568bdaa3-7d43-4786-8d73-a9e20cc828df" /> |
+| <img width="1677" alt="Image" src="https://github.com/user-attachments/assets/9de5e129-74c6-48cc-9811-df281f12ca35" /> |
+| <img width="1376" alt="Image" src="https://github.com/user-attachments/assets/296f762a-900a-493c-a3ff-0aa863ffa2b3" /> |
+| <img width="1307" alt="Image" src="https://github.com/user-attachments/assets/aafb5c2a-2f54-4ac9-ba55-ff031b05e166" /> |
+    
+  <!-- 2nd level end -->
+</details>
+  
+<!-- 1st level end -->
+</details>
 
 ---
 ## **Troubleshooting**
