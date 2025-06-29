@@ -21,6 +21,7 @@
 |  `5`  | [Dockerized-Web-Games](./05-docker-app-ecs/) | **Game Hub: A web-based gaming platform serving games via Nginx in lightweight containers. Deployed on AWS ECS with autoscaling tasks, it ensures high availability, scalability, and optimal performance.** | `AWS Elastic Container Service, ECR, ALB, Docker, Nginx` |
 |  `6`  | [DB-Migration-MySQL-EC2-RDS-MySQL](./06-database-migrations/) | **Database Migration Project v1 : MySQL on EC2 to RDS MySQL using AWS Database Migration Service (DMS) for seamless transition and minimal downtime. Script Automation for DB Configuration using EC2 User Data** | `AWS DMS, RDS, EC2` |
 |  `7`  | [S2S-VPN-Simulated-On-Prem](./07-s2s-vpn-simulated/) | **Automated End-to-End IPSec VPN Provisioning with IaC & Cloud Init — Integrated Key Exchange, Tunnel Setup, and Route Injection. Utilize Static Routing for simplicity.** | `Terraform, Cloud init, AWS VPC, EC2, Site-to-Site VPN, VPN Gateway, Customer Gateway` |
+|  `8`  | [Netflix-DevSecOps-GitOps](./08-netflix-mini-clone-devsecops-gitops/) | **End-to-End DevSecOps Pipeline deployed using Jenkins follows industry standard GitOps practices for deployment on k8s. Monitoring and Visualization using Prometheus and Grafana respectively.** | `Jenkins, Docker, Kubernetes, AWS VPC, EC2, EKS, Sonarqube, Prometheus, Grafana` |
 
 ### **Other Hands on Projects**
 | **No.** | **Name** |     **Description**    |
