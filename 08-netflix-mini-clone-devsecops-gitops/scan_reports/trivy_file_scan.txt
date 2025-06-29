@@ -1,0 +1,58 @@
+
+Report Summary
+
+┌───────────────────┬──────┬─────────────────┬─────────┐
+│      Target       │ Type │ Vulnerabilities │ Secrets │
+├───────────────────┼──────┼─────────────────┼─────────┤
+│ package-lock.json │ npm  │        7        │    -    │
+├───────────────────┼──────┼─────────────────┼─────────┤
+│ yarn.lock         │ yarn │        0        │    -    │
+└───────────────────┴──────┴─────────────────┴─────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+For OSS Maintainers: VEX Notice
+--------------------------------
+If you're an OSS maintainer and Trivy has detected vulnerabilities in your project that you believe are not actually exploitable, consider issuing a VEX (Vulnerability Exploitability eXchange) statement.
+VEX allows you to communicate the actual status of vulnerabilities in your project, improving security transparency and reducing false positives for your users.
+Learn more and start using VEX: https://trivy.dev/v0.63/docs/supply-chain/vex/repo#publishing-vex-documents
+
+To disable this notice, set the TRIVY_DISABLE_VEX_NOTICE environment variable.
+
+
+package-lock.json (npm)
+=======================
+Total: 7 (UNKNOWN: 0, LOW: 0, MEDIUM: 7, HIGH: 0, CRITICAL: 0)
+
+┌─────────┬─────────────────────┬──────────┬────────┬───────────────────┬──────────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│ Library │    Vulnerability    │ Severity │ Status │ Installed Version │            Fixed Version             │                            Title                             │
+├─────────┼─────────────────────┼──────────┼────────┼───────────────────┼──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ esbuild │ GHSA-67mh-4wv8-2f99 │ MEDIUM   │ fixed  │ 0.15.18           │ 0.25.0                               │ esbuild enables any website to send any requests to the      │
+│         │                     │          │        │                   │                                      │ development server...                                        │
+│         │                     │          │        │                   │                                      │ https://github.com/advisories/GHSA-67mh-4wv8-2f99            │
+├─────────┼─────────────────────┤          │        ├───────────────────┼──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ vite    │ CVE-2025-24010      │          │        │ 3.2.11            │ 6.0.9, 5.4.12, 4.5.6                 │ vite: Vite allows any websites to send any requests to the   │
+│         │                     │          │        │                   │                                      │ development...                                               │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-24010                   │
+│         ├─────────────────────┤          │        │                   ├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-30208      │          │        │                   │ 6.2.3, 6.1.2, 6.0.12, 5.4.15, 4.5.10 │ vite: Vite bypasses server.fs.deny when using `?raw??`       │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-30208                   │
+│         ├─────────────────────┤          │        │                   ├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-31125      │          │        │                   │ 6.2.4, 6.1.3, 6.0.13, 5.4.16, 4.5.11 │ vite: Vite has a `server.fs.deny` bypassed for `inline` and  │
+│         │                     │          │        │                   │                                      │ `raw` with `?import`...                                      │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-31125                   │
+│         ├─────────────────────┤          │        │                   ├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-31486      │          │        │                   │ 6.2.5, 6.1.4, 6.0.14, 5.4.17, 4.5.12 │ vite: Vite allows server.fs.deny to be bypassed with .svg or │
+│         │                     │          │        │                   │                                      │ relative paths...                                            │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-31486                   │
+│         ├─────────────────────┤          │        │                   ├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-32395      │          │        │                   │ 6.2.6, 6.1.5, 6.0.15, 5.4.18, 4.5.13 │ vite: Vite has an `server.fs.deny` bypass with an invalid    │
+│         │                     │          │        │                   │                                      │ `request-target`                                             │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-32395                   │
+│         ├─────────────────────┤          │        │                   ├──────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│         │ CVE-2025-46565      │          │        │                   │ 6.3.4, 6.2.7, 6.1.6, 5.4.19, 4.5.14  │ vite: Path Traversal in Vite Dev Server Allows Access to     │
+│         │                     │          │        │                   │                                      │ Restricted Files...                                          │
+│         │                     │          │        │                   │                                      │ https://avd.aquasec.com/nvd/cve-2025-46565                   │
+└─────────┴─────────────────────┴──────────┴────────┴───────────────────┴──────────────────────────────────────┴──────────────────────────────────────────────────────────────┘
