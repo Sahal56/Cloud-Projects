@@ -10,13 +10,19 @@
 - Provisioned an AWS EKS cluster and deployed ArgoCD, Prometheus, and Grafana monitoring stack using Helm charts.
 - Monitored cluster health and application performance using Prometheus metrics and Grafana dashboards.
 
----
 <h2 align="center">
   <b> Architecture </b>
 </h2>
 
+![Image](https://github.com/user-attachments/assets/174694be-1082-4070-8d37-91ba569375ac)
 
----
+<details>
+  <summary> <b>  Cloud Architecture </b> </summary>
+  
+![Image](https://github.com/user-attachments/assets/80ac5748-c03a-4c3f-b48d-82f3dd6117f0)
+
+</details>
+
 <h2 align="center">
   <b> Output </b>
 </h2>
@@ -120,7 +126,6 @@
 |:---------------------------------:|
 | <img width="952" alt="Image" src="https://github.com/user-attachments/assets/45c6fd34-7e8f-4c1c-9fe4-2307f9b7cac2" /> |
 
----
 <h2 align="center">
   <b> ACKNOWLEDGEMENTS </b>
 </h2>
