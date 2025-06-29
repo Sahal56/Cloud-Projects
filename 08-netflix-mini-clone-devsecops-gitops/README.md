@@ -10,6 +10,15 @@
 - Provisioned an AWS EKS cluster and deployed ArgoCD, Prometheus, and Grafana monitoring stack using Helm charts.
 - Monitored cluster health and application performance using Prometheus metrics and Grafana dashboards.
 
+<details>
+  <summary> <b>  NOTE </b> </summary>
+  
+> This project's actual source repo is at another location, follows polyrepo: (Please kindly refer to below links)
+>   - Application Source Repo: [Netflix-CI-CD](https://github.com/Sahal56/Netflix-CI-CD)
+>   - Kubernetes Manifest Repo: [netflix-k8s-manifests](https://github.com/Sahal56/netflix-k8s-manifests)
+
+</details>
+
 <h2 align="center">
   <b> Architecture </b>
 </h2>
@@ -69,9 +78,11 @@
   <summary> <b> Security </b> </summary>
   
 |   | `Security` |
-|:---:|------------|
+|:---:|:------------:|
 | `OWASP Dependancy Check` | <img width="1643" alt="Image" src="https://github.com/user-attachments/assets/70ca1a8f-a94d-47a1-84fe-6f1ea9f61805" /> |
 | `SonarQube - SAST`       | <img width="1458" alt="Image" src="https://github.com/user-attachments/assets/90b23b8c-35ce-4042-8194-63dfc06ba60f" /> |
+| `Trivy File Scan`       | <img width="1290" alt="Image" src="https://github.com/user-attachments/assets/c0449faa-b4ec-4da7-a9e0-46ceda403bb5" /> |
+| `Trivy Image Scan`       | <img width="1090" alt="Image" src="https://github.com/user-attachments/assets/01d9f124-2c35-4203-b5ed-bb7090f06e0c" /> |
   
   <!-- 2nd level end -->
 </details>
